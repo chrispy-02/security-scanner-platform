@@ -1,0 +1,17 @@
+/* CSS for footer */
+
+/* Set box size and align text to center*/
+footer
+{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/*Set text font, size, and color and adjust margins*/
+.footer_text
+{
+    color: #D3D3D3FF;
+    font-family: Arial, sans-serif;
+    font-size: 1.3rem;
+    margin: 150px 0 50px;
+}

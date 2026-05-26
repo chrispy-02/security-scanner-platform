@@ -1,0 +1,420 @@
+nav
+{
+    background: transparent;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.user
+{
+    padding: 0 25vw 0 0;
+}
+
+.logo_container {
+  right: -81vw;
+    bottom: -5.5vh;
+  z-index: 9999;
+  user-select: none;
+}
+
+.graphs
+{
+    margin-top: 3vw;
+}
+
+html, body {
+    background: #1a2d5a none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.menu {
+    display: flex;
+    justify-content: left;
+    position: relative;
+    margin: 3vh 0 0.5vh 0;
+}
+
+.menu_list{
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+    margin: 0 0 0 .5em;
+}
+
+.menu_list a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem .5rem;
+    font-family: Arial, sans-serif;
+}
+
+.menu_list a:hover {
+    color:rgb(93, 139, 139);
+}
+
+.menu img {
+    width: 15vw;
+    margin-left: 300%;
+    object-fit: contain;
+    z-index: 10;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+    overflow: auto;
+}
+
+.divider_domain {
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+    overflow: auto;
+    margin-top: 1vh;
+}
+
+h2
+{
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+h3
+{
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.settings_container
+{
+    width: 80%;
+    margin: 2vh auto auto;
+    background: #31426B;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td
+{
+    font-family: Arial, sans-serif;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th
+{
+    background-color: #346879;
+    color: white;
+}
+
+tr:hover
+{
+    background-color: #f1f1f1;
+}
+
+select
+{
+    padding: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button
+{
+    margin-top: 20px;
+    background: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover
+{
+    background: #218838;
+}
+
+.flash_suc
+{
+    margin: 1vh auto 0 auto;
+    padding: 0 1vw;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+.flash_fail
+{
+    margin: 1vh auto 0 auto;
+    padding: 0 1vw;
+    background: #ea9a9a;
+    color: white;
+    border: 1px solid #a94343;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+
+.settings_container ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2.22vh 0;
+}
+
+.settings_container li
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh 0.5vw;
+    border-bottom: 1px solid grey;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+.settings_container li:last-child
+{
+    border-bottom: none;
+}
+
+
+.settings_container li form
+{
+    display: inline;
+    margin-left: 1vw;
+}
+
+
+.del_btn
+{
+    background-color: #dc3545;
+    color: white;
+    padding: 0.5vh 0.7vw;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0;
+    vertical-align: middle;
+}
+
+.del_btn:hover
+{
+    background-color: #c82333;
+}
+
+ul + p {
+     font-family: Arial, sans-serif;
+     color: #555;
+     margin: 2vh 0;
+     text-align: center;
+}
+
+.add_form {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 2vh;
+    flex-wrap: wrap;
+}
+
+.add_form label {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.add_form input[name="new_domain"].domain_input
+{
+    padding: 0.7vh 0.7vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.add_form button[name="add_domain"]
+{
+    background-color: #007bff;
+    color: white;
+    padding: 1vh 1vw;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+.add_form button[name="add_domain"]:hover
+{
+    background-color: #0056b3;
+}
+
+#confirm {
+    justify-content: space-between;
+    color: #ffffff;
+    flex-direction: column;
+    display: none;
+    background-color: #346879;
+    max-height: 40vh;
+    max-width: 30vw;
+    min-height: 40vh;
+    min-width: 30vw;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border: 4px solid #000000;
+    border-radius: .5em;
+    padding-top: 5vh;
+    padding-bottom:  5vh;
+}
+
+#confirm-button{
+    margin: 0;
+}
+
+#confirm-cancel-button{
+    margin: 0;
+}
+
+.confirm-row{
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*light mode*/
+
+body.light-mode {
+    background-color: white;
+    color: black ;
+}
+
+body.light-mode nav,
+body.light-mode .align_left a,
+body.light-mode .user {
+    color: black ;
+}
+
+body.light-mode nav {
+    background-color: lightgray ;
+}
+
+body.light-mode .dropdown-content {
+    background-color: rgba(240, 240, 240, 0.9) ;
+}
+body.light-mode .dropdown-content a {
+    color: black ;
+}
+
+body.light-mode table{
+    border: 1px solid black;
+}
+
+body.light-mode button {
+    background-color: white ;
+    color: #28a745 ;
+    border: 2px solid #28a745 ;
+}
+
+body.light-mode button:hover {
+    background-color: #95e7ab ;
+}
+
+body.light-mode .divider, body.light-mode .divider_domain {
+    border-bottom: 2px solid black ;
+}
+
+body.light-mode .settings_container{
+    background-color: #FFFFFF ;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode a {
+    color: black ;
+}
+
+body.light-mode .settings_container li {
+    color: black ;
+    border-bottom-color: #ddd ;
+}
+
+body.light-mode .settings_container ul + p {
+     color: black ;
+}
+
+body.light-mode .add_form label {
+     color: black ;
+}
+
+body.light-mode .add_form .domain_input {
+    background-color: white ;
+    color: black ;
+    border: 1px solid black ;
+}
+
+
+body.light-mode .del_btn {
+    background-color: white;
+    color: #dc3545 ;
+    border: 1px solid #dc3545;
+}
+body.light-mode .del_btn:hover {
+    background-color: #f8d7da;
+}
+
+
+body.light-mode .add_form button[name="add_domain"] {
+    background-color: white ;
+    color: #007bff ;
+    border: 1px solid #007bff ;
+}
+body.light-mode .add_form button[name="add_domain"]:hover {
+     background-color: #cfe2ff ;
+}
+

@@ -1,0 +1,134 @@
+{% extends 'shared/layout.html' %}
+
+{% block title %}
+<title>Settings</title>
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"    href="{{ url_for('static', filename='main/css/settings.css') }}">
+{% endblock %}
+
+{% block bodyclass %}settings-page{% endblock %}
+{% block maincontent %}
+<div class="divider"></div>
+
+
+    <div class="settings_container">
+        {% if role == 'owner' or role == 'admin' %}
+        <h2>Change User Roles</h2>
+
+            <form method="POST">
+                <table>
+                    <tr>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th></th>
+                    </tr>
+                    {% for u in users %}
+                    {% if role == 'owner' %}
+                    <tr>
+                        <td>{{ u.email }}</td>
+                        <td>
+                            <select name="role_{{ u.user_id }}" {% if u.role == 'owner' or u.email == user %}disabled{% endif %}>
+                                <option value="owner" {% if u.role == 'owner' %}selected{% endif %}>Owner</option>
+                                <option value="admin" {% if u.role == 'admin' %}selected{% endif %}>Admin</option>
+                                <option value="employee" {% if u.role == 'employee' %}selected{% endif %}>Employee</option>
+                                <option value="reader" {% if u.role == 'reader' %}selected{% endif %}>Reader</option>
+                            </select>
+                            {% if u.role == 'owner' %}
+                                <small>(Owner role cannot be changed)</small>
+                            {% elif u.email == user %}
+                                <small>(You cannot change your own role)</small>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            <form method="POST">
+                                <button type="submit" name="delete_user" value="{{ u.user_id }}" class="del_btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% elif role == 'admin' %}
+                    <tr>
+                        {% if u.role == 'employee' or u.role == 'reader' %}
+                        <td>{{ u.email }}</td>
+                        <td>
+                            <select name="role_{{ u.user_id }}" {% if u.role == 'owner' or u.email == user %}disabled{% endif %}>
+                                <option value="employee" {% if u.role == 'employee' %}selected{% endif %}>Employee</option>
+                                <option value="reader" {% if u.role == 'reader' %}selected{% endif %}>Reader</option>
+                            </select>
+                            {% if u.role == 'owner' %}
+                                <small>(Owner role cannot be changed)</small>
+                            {% elif u.email == user %}
+                                <small>(You cannot change your own role)</small>
+                            {% endif %}
+                        </td>
+
+                        <td>
+                            <form method="POST">
+                                <button type="submit" name="delete_user" value="{{ u.user_id }}" class="del_btn">Delete</button>
+                            </form>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </table>
+                <br>
+                <button type="submit" name="update_roles">Update Roles</button>
+            </form>
+            {% endif %}
+
+        {% if role == 'owner' %}
+            <div class="divider_domain"></div>
+
+                <h2>Manage Authorized Email Domains</h2>
+                <h3>Current Domains</h3>
+                {% if domains %}
+                    <ul>
+                        {% for d in domains %}
+                            <li>
+                                {{ d.domain }}
+                                <form method="POST">
+                                    <button type="submit" name="delete_domain" value="{{ d.domain }}" class="del_btn">Delete</button>
+                                </form>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No domains have been added yet. All email domains are currently allowed.</p>
+                {% endif %}
+
+                <h3>Add New Domain</h3>
+                <form method="POST">
+                    <div class="add_form">
+                        <label for="new_domain">Domain Name:</label>
+                        <input type="text" id="new_domain" name="new_domain" placeholder="example.com" required class="domain_input">
+                        <button type="submit" name="add_domain">Add Domain</button>
+                    </div>
+                </form>
+                {% endif %}
+                <div class="api_key"></div>
+                    <h2>Generate your API Key</h2>
+                        <form method="POST">
+                                <button type="submit" name="generate-api-key" value="{{ user }}" class="generate-btn">Generate Key</button>
+                        </form>
+                </div>
+    
+    {% with messages = get_flashed_messages(with_categories=True) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == "success" %}
+                            <div class="flash_suc">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% else %}
+                            <div class="flash_fail">
+                                <p>{{ message }}</p>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+        {% endwith %}
+    </div>
+{% endblock %}

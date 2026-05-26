@@ -1,0 +1,648 @@
+nav {
+    background: transparent;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.user {
+    padding: 0 25vw 0 0;
+}
+
+.logo_container {
+  right: -81vw;
+    bottom: -5.5vh;
+  z-index: 9999;
+  user-select: none;
+}
+
+html, body {
+    background: black none;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: rgb(101, 197, 197);
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+h3 {
+    color: rgb(101, 197, 197);
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+    overflow: auto;
+}
+
+.reports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 2em;
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    width: 95%;
+    max-width: 1600px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-subtitle {
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+/* Summary Cards */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.summary-card {
+    background-color: #1c1c1d;
+    border: 1px solid rgb(101, 197, 197);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+}
+
+.score {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.risk-label {
+    margin-top: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.risk-breakdown {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.high-risk, .critical-risk {
+    color: #d9534f;
+}
+
+.medium-risk {
+    color: #f0ad4e;
+}
+
+.low-risk {
+    color: #5bc0de;
+}
+
+.info-risk {
+    color: #5cb85c;
+}
+
+.small-text {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+/* Dashboard Tabs */
+.dashboard-tabs {
+    display: flex;
+    border-bottom: 1px solid #444;
+    margin-bottom: 1.5rem;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: white;
+}
+
+.tab.active {
+    color: rgb(101, 197, 197);
+    border-bottom: 2px solid rgb(101, 197, 197);
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Charts Container */
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.charts-container.two-column {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chart-box {
+    background-color: #1c1c1d;
+    border: 1px solid rgb(101, 197, 197);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.chart-placeholder {
+    height: 250px;
+    background-color: #222;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loading indicator animation */
+.loading-indicator {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(101, 197, 197, 0.3);
+    border-radius: 50%;
+    border-top-color: rgb(101, 197, 197);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tables */
+.vulnerability-table-container,
+.website-table-container {
+    background-color: #1c1c1d;
+    border: 1px solid rgb(101, 197, 197);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+}
+
+th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #222;
+    color: rgb(101, 197, 197);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #333;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Progress bars */
+.progress-bar-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 0.25rem;
+    height: 0.5rem;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #28a745;
+}
+
+/* Insights Section */
+.insights-section {
+    background-color: #1c1c1d;
+    border: 1px solid rgb(101, 197, 197);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+.insights-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.insights-list li {
+    margin-bottom: 0.75rem;
+    color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Risk color indicators */
+.risk-critical {
+    background-color: #d9534f;
+}
+
+.risk-high {
+    background-color: #f0ad4e;
+}
+
+.risk-medium {
+    background-color: #5bc0de;
+}
+
+.risk-low {
+    background-color: #5cb85c;
+}
+
+/* Chart styles */
+.chart-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+canvas {
+    max-height: 100%;
+}
+
+
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+body.light-mode nav {
+    background: lightgray !important;
+}
+
+body.light-mode nav,
+body.light-mode .align_left a,
+body.light-mode .user,
+body.light-mode .summary-card h3,
+body.light-mode .summary-card .score-container,
+body.light-mode .summary-card .risk-label,
+body.light-mode .vulnerability-table td,
+body.light-mode .website-table td,
+body.light-mode .dropdown-content a ,
+body.light-mode .dropdown-content a,
+body.light-mode .modal-section h3,
+body.light-mode .insights-list li,
+body.light-mode .close:hover,
+body.light-mode .close:focus{
+    color: black ;
+}
+
+
+body.light-mode .summary-card, body.light-mode .vulnerability-table,
+body.light-mode .website-table,
+body.light-mode .chart-box,
+body.light-mode .insights-section {
+    background-color: white;
+    color: black ;
+    border: 2px solid black ;
+}
+
+
+body.light-mode .dashboard-tabs .tab {
+    background-color: #f5f5f5 ;
+    color: black ;
+    border: 1px solid black;
+}
+
+body.light-mode .vulnerability-table th ,
+body.light-mode .website-table th{
+    color:  rgb(101, 197, 197) ;
+}
+
+body.light-mode .high-risk {
+    color: red ;
+}
+body.light-mode .medium-risk {
+    color: orange ;
+}
+body.light-mode .low-risk {
+    color: green ;
+}
+
+body.light-mode .insights-section {
+    background-color: #f8f8f8 ;
+    color: black;
+}
+
+body.light-mode .dropdown-content {
+    background-color: white ;
+    border: 1px solid black ;
+}
+
+body.light-mode .insights-list li strong {
+    color: black ;
+    font-weight: bold;
+}
+
+body.light-mode .insights-list li span.high-risk {
+    color: red ;
+}
+body.light-mode .insights-list li span.medium-risk {
+    color: orange ;
+}
+body.light-mode .insights-list li span.low-risk {
+    color: green ;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #1c1c1d;
+    font-family: Arial, sans-serif;
+    border: 1px solid rgb(101, 197, 197);
+    margin: 10% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+}
+
+.modal h2 {
+    margin-top: 0;
+    color: rgb(101, 197, 197);
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+#modal-severity {
+    font-size: 1rem;
+}
+
+.modal-section h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.modal-section p {
+    color: white;
+    font-size: .8rem;
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+/* Vulnerability status tags */
+.new-tag, .fixed-tag {
+    display: inline-block;
+    padding: 2px 6px;
+    margin-left: 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.new-tag {
+    background-color: #d9534f;
+    color: white;
+}
+
+.fixed-tag {
+    background-color: #28a745;
+    color: white;
+}
+
+.fixed-separator {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    padding: 8px 0;
+    border-bottom: 1px solid #28a745;
+    border-top: 1px solid #28a745;
+}
+
+.fixed-vulnerability {
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+/* Error and empty states */
+.error-message, .no-data-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #d9534f;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.no-data-message {
+    color: #aaa;
+}
+
+/* Loading indicator improvements */
+.loading-indicator {
+    width: 3rem;
+    height: 3rem;
+    border: 4px solid rgba(101, 197, 197, 0.3);
+    border-radius: 50%;
+    border-top-color: rgb(101, 197, 197);
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* Light mode support for new elements */
+body.light-mode .modal-content {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+body.light-mode .modal h2 {
+    color: #1c1c1d;
+    border-bottom: 1px solid #ddd;
+}
+
+body.light-mode .close {
+    color: #333;
+}
+
+body.light-mode .fixed-separator {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #218838;
+    border-color: #28a745;
+}
+
+body.light-mode .fixed-vulnerability {
+    background-color: rgba(40, 167, 69, 0.05);
+}
+
+body.light-mode .new-tag {
+    background-color: #d9534f;
+    color: white;
+}
+
+body.light-mode .fixed-tag {
+    background-color: #28a745;
+    color: white;
+}
+
+.vulnerability-table tr:nth-child(odd),
+.website-table tr:nth-child(odd){
+    background-color: #000000;
+}
+
+.vulnerability-table tr:nth-child(even),
+.website-table tr:nth-child(even){
+    background-color: #1a1a1a;
+}
+
+.vulnerability-table tr:hover,
+.website-table tr:hover{
+    background-color: #333333;
+}
+
+body.light-mode .vulnerability-table tr:nth-child(odd),
+body.light-mode .website-table tr:nth-child(odd) {
+    background-color: #f9f9f9 !important;
+}
+
+body.light-mode .vulnerability-table tr:nth-child(even),
+body.light-mode .website-table tr:nth-child(even) {
+    background-color: #eaf6ff !important;
+}
+
+body.light-mode .vulnerability-table tr:hover,
+body.light-mode .website-table tr:hover {
+    background-color: #dceeff !important;
+}
+
+
+.website-parent {
+  cursor: pointer;
+  background-color: #1c1c1d;
+  color: #ffffff;
+}
+.website-parent:hover {
+  background-color: #333333;
+}
+.website-parent .caret {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.website-child {
+  background-color: #252525;
+  color: #ffffff;
+}
+
+.website-child td {
+  padding: 0.5rem 1rem;
+}
+.vuln-list {
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.vuln-list li {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+}
+

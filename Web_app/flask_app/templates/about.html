@@ -1,0 +1,52 @@
+
+
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/main/css/about.css">
+
+{% endblock %}
+
+{% block title %}
+<title>About</title>
+{% endblock %}
+
+{% block bodyclass %}about-page{% endblock %}
+
+{% block maincontent %}
+<div class="divider"></div>
+<section class="about-section">
+  <div class="container">
+    <h2 class="small_header">About</h2>
+
+    <div class="about-content">
+      <!-- Left Side - About the Project -->
+      <div class="about_box">
+        <h1>About the Project</h1>
+          <p>
+              Vulnerability Detect and Analysis is a web security tool designed
+              to proactively identify and address vulnerabilities in web applications.
+              Using OWASP ZAP automated scanning, it surfaces issues such as
+              SQL injection, cross-site scripting (XSS), and security misconfigurations.
+              With risk-categorized dashboards and exportable reports, it gives teams the
+              insight needed to safeguard their web infrastructure.
+          </p>
+      </div>
+
+      <!-- Right Side - Project origin -->
+      <div class="about_box">
+        <h1>Project Origin</h1>
+          <p>
+              Originally developed as a Michigan State University capstone project sponsored
+              by McKesson. This public portfolio version was cleaned, secured, documented,
+              and prepared for deployment by Christopher Nguyen. It replaces the original
+              GitLab CI scanning pipeline with GitHub Actions, removes hard-coded secrets,
+              and adds a safe public demo mode.
+          </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}

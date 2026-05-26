@@ -1,0 +1,212 @@
+/* setting background color */
+html, body
+{
+    background: black none;
+}
+
+/* nav bar settings */
+nav
+{
+    background: transparent;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.user
+{
+    padding: 0 25vw 0 0;
+}
+
+.logo_container {
+  right: -81vw;
+    bottom: -5.5vh;
+  z-index: 9999;
+  user-select: none;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    width: 100%;
+
+
+    
+    & h2 {
+        transform: translateX(-10%);
+        font-size: 2rem;
+        margin: 1.5em 0 2em 0;
+    }
+}
+
+form
+{
+    width: 60vw;
+}
+
+.button_container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* justify-content: space-between; */
+}
+
+label
+{
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+}
+
+input {
+    padding: 1.5vw;
+    outline: none;
+    border: 1px solid rgb(101, 197, 197);
+    border-radius: .5em;
+    width: 56.9vw;
+    margin: .5em 0 7vw 0;
+    background-color: black;
+    font-size: 1.5rem;
+    color: white;
+    justify-content: center;
+}
+
+.divider_bottom {
+    margin-top:10em;
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+}
+
+button {
+    background-color: black;
+    padding: 1em 1.25em 1em 1.25em;
+    color: white;
+    font-family: Arial, sans-serif;
+    outline: none;
+    border: 1px solid rgb(101, 197, 197);
+    border-radius: .5em;
+    cursor: pointer;
+    display: inline-block;
+    width: 15vw;
+}
+
+button:hover{
+    color: rgb(101, 197, 197);
+}
+
+#cancel {
+    margin-right: 0;
+}
+
+.recurrance_display {
+    display: none;
+}
+
+.show_recurrance_settings {
+    display: block;
+}
+
+
+
+.recurrance_settings {
+    position: relative;
+    white-space: nowrap;
+    font-size: small;
+    font-weight: light;
+    font-family: Arial, sans-serif;
+    height: auto;
+
+    input {
+        width: auto;
+        height: 1vh;
+        background-color: white;
+        color: black;
+        border-radius: .25em;
+        font-size: x-large;
+    }
+    select {
+        height: 3.5vh;
+        font-size: large;
+    }
+    
+}
+
+input[type="checkbox"] {
+    transform: scale(4);
+    margin-left: 10vw;
+}
+
+#settings {
+    width: 56.9vw;
+    display: none;
+}
+
+.divider {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    border-bottom: 2px solid grey;
+    z-index: 1 !important;
+    display: block;
+}
+
+
+
+/*light mode for website registration page*/
+body.light-mode {
+    background-color: white ;
+    color: black ;
+}
+
+
+body.light-mode .details {
+    background-color: #f8f8f8 ;
+    color: black ;
+    border: 2px solid black ;
+}
+
+body.light-mode input {
+    background-color: white ;
+    color: black ;
+    border: 2px solid black ;
+}
+
+
+body.light-mode button {
+    background-color: white ;
+    color: black ;
+    border: 2px solid black ;
+}
+
+body.light-mode button:hover {
+    background-color: black ;
+    color: white ;
+}
+
+body.light-mode .divider {
+    border-bottom: 2px solid black ;
+}
+
+body.light-mode nav {
+    background-color: lightgray ;
+}
+
+body.light-mode nav a,
+body.light-mode .align_left a,
+body.light-mode .user {
+    color: black ;
+}
+
+body.light-mode .dropdown-content {
+    background-color: rgba(240, 240, 240, 0.9) ;
+    border: 1px solid black ;
+}
+
+body.light-mode .dropdown-content a {
+    color: black ;
+}

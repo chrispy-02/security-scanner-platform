@@ -1,0 +1,171 @@
+nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #346879;
+    opacity: 0.8;
+    width: 100%;
+    height: 6vh;
+    padding: 1vw;
+    font-family: Arial, sans-serif;
+    margin-top: 10vh;
+    position: relative !important;
+    z-index: 1000 !important;
+    overflow: visible !important;
+}
+
+.user
+{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-left: auto;
+    padding: 0 5vw;
+}
+
+/* Set text and alignment properties*/
+.align_left
+{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    list-style: none;
+    font-weight: bold;
+    gap: 20px;
+    align-items: center;
+
+}
+
+/* Force links to be white instead of default purple, remove underline*/
+.align_left a:link
+{
+    color: white;
+    text-decoration: none;
+}
+
+/* When link is hovered, lower opacity*/
+.align_left a:hover
+{
+    opacity: 0.6;
+}
+
+/* Set link to white instead of default purple if visited*/
+.align_left a:visited
+{
+    color: white;
+}
+
+/* Set up menu bar for when screen is <= 650px*/
+.menu_bar
+{
+    display: none;
+    cursor: pointer;
+}
+
+/* Set up checkbox for menu bar interactivity*/
+.menu_toggle
+{
+    display: none;
+}
+
+/* When the screen's max width is 650px or less, do this: */
+@media screen and (max-width: 650px)
+{
+    /* Hide all links and set content direction to column, set sizing properties */
+    .align_left
+    {
+        display: none;
+        flex-direction: column;
+        background-color: darkgrey;
+        position: absolute;
+        left: 0;
+        top: 10vh;
+        width: 100vw;
+        height: 75vh;
+    }
+
+    /* Show menu bar image and set sizing properties */
+    .menu_bar
+    {
+        display: flex;
+        width: 5vw;
+        height: 8vw;
+    }
+
+    /* when menu bar image is hovered, lower opacity */
+    .menu_bar:hover
+    {
+        opacity: 0.6;
+    }
+
+    /* for a checked checkbox, the menu bar image, and the links: */
+    .menu_toggle:checked + .menu_bar + .align_left
+    {
+        /* reveal items and align them */
+        display: flex;
+        align-items: flex-start;
+
+        /* hide linkedin image */
+        .linkedin_img
+        {
+            display: none;
+        }
+
+        /* show linkedin text */
+        .linkedin_text
+        {
+            display: flex;
+        }
+
+    }
+}
+
+
+/*drop down menu of the settings*/
+.dropdown {
+    display: none;
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 10000 !important;
+}
+
+.dropdown-content.show,
+.dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+

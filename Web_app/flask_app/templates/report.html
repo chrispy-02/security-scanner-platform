@@ -1,0 +1,248 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='main/css/report.css') }}">
+
+<meta id="report_data" data-web_id="{{report_data['website_id']}}" data-scan_id="{{report_data['scan_id']}}">
+{% endblock %}
+
+{% block title %}
+<title>Executive Security Dashboard</title>
+{% endblock %}
+
+{% block maincontent %}
+<div class="divider"></div>
+<main class="reports">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>{{ report_data['website_name'] }} Executive Security Dashboard</h1>
+            <p class="dashboard-subtitle">Comprehensive overview of your organization's security posture</p>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <h3>Overall Risk Score</h3>
+                <div class="score-container">
+                    <div class="score risk-medium" id="overall-risk-score"></div>
+                    <div class="risk-label medium-risk"></div>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <h3>Active Vulnerabilities</h3>
+                <div class="score-container">
+                    <div class="score" id="active-vulnerabilities"></div>
+                    <div class="risk-breakdown">
+                        <span class="high-risk"></span>
+                        <span class="medium-risk"></span>
+                        <span class="low-risk"></span>
+                        <span class="info-risk"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <h3>Remediation Rate</h3>
+                <div class="score-container">
+                    <div class="score" id="remediation-rate"></div>
+                    <div class="small-text"></div>
+                </div>
+            </div>
+
+            <div class="summary-card">
+                <h3>Scans for this Website</h3>
+                <div class="score-container">
+                    <div class="score" id="websites-count"></div>
+                    <div class="small-text last_date"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Tabs -->
+        <div class="dashboard-tabs">
+            <div class="tab active" data-tab="overview">Overview</div>
+            <div class="tab" data-tab="trends">Trends</div>
+            <div class="tab" data-tab="vulnerabilities">Vulnerabilities</div>
+            <div class="tab" data-tab="websites">Websites</div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Overview Tab (shown by default) -->
+            <div class="tab-content active" id="overview-tab">
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>Risk Distribution</h3>
+                        <div class="chart-placeholder" id="risk-distribution-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Risk Trend (Last 6 Months)</h3>
+                        <div class="chart-placeholder" id="risk-trend-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Remediation Progress</h3>
+                        <div class="chart-placeholder" id="remediation-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Website Risk Comparison</h3>
+                        <div class="chart-placeholder" id="website-comparison-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trends Tab (hidden by default) -->
+            <div class="tab-content" id="trends-tab">
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>Risk Score Trend</h3>
+                        <div class="chart-placeholder" id="risk-score-trend-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Scan Activity</h3>
+                        <div class="chart-placeholder" id="scan-activity-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Vulnerability Discovery Rate</h3>
+                        <div class="chart-placeholder" id="vulnerability-discovery-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Change in Vulnerability Rate</h3>
+                        <div class="chart-placeholder" id="remediation-rate-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vulnerabilities Tab (hidden by default) -->
+            <div class="tab-content" id="vulnerabilities-tab">
+                <div class="vulnerability-table-container">
+                    <h3>Top Vulnerabilities</h3>
+                    <table class="vulnerability-table">
+                        <thead>
+                            <tr>
+                                <th>Vulnerability</th>
+                                <th>Severity</th>
+                                <th>Count</th>
+                                <th>Remediated</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vulnerabilities-table-body">
+                            <!-- Table rows will be populated by JavaScript -->
+                            <tr>
+                                <td colspan="5" class="text-center">Loading vulnerability data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="charts-container two-column">
+                    <div class="chart-box">
+                        <h3>Vulnerabilities by Severity</h3>
+                        <div class="chart-placeholder" id="vulnerabilities-by-severity-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+
+                    <div class="chart-box">
+                        <h3>Remediation Status</h3>
+                        <div class="chart-placeholder" id="remediation-status-chart">
+                            <div class="loading-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Websites Tab (hidden by default) -->
+            <div class="tab-content" id="websites-tab">
+                <div class="website-table-container">
+                    <h3>Websites Security Status</h3>
+                    <table class="website-table">
+                        <thead>
+                            <tr>
+                                <th>Website</th>
+                                <th>Vulnerabiities</th>
+                            </tr>
+                        </thead>
+                        <tbody id="websites-table-body">
+                            <!-- Table rows will be populated by JavaScript -->
+                            <tr>
+                                <td colspan="7" class="text-center">Loading website data...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+{#                <div class="charts-container two-column">#}
+{#                    <div class="chart-box">#}
+{#                        <h3>Risk Score by Website</h3>#}
+{#                        <div class="chart-placeholder" id="risk-score-by-website-chart">#}
+{#                            <div class="loading-indicator"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                    <div class="chart-box">#}
+{#                        <h3>High Risk Issues by Website</h3>#}
+{#                        <div class="chart-placeholder" id="high-risk-by-website-chart">#}
+{#                            <div class="loading-indicator"></div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+        </div>
+
+        <!-- Key Insights Section -->
+        <div class="insights-section">
+            <h3>Key Insights & Recommendations</h3>
+            <ul class="insights-list">
+                <li>
+                    <strong>Security Posture:</strong> Your overall security risk score is <span id="insight-risk-score">65</span>/100,
+                    which is considered <span id="insight-risk-level" class="medium-risk">Medium</span>.
+                    This is trending downward, showing security improvement.
+                </li>
+                <li>
+                    <strong>Critical Issues:</strong> There are <span id="insight-critical-count">15</span> high-risk vulnerabilities that
+                    require immediate attention, primarily related to <span id="insight-top-vulnerability">Cross-Site Scripting (XSS)</span>.
+                </li>
+                <li>
+                    <strong>Remediation Progress:</strong> Your team has remediated <span id="insight-remediation-rate">58</span>% of identified
+                    issues, which is below target levels.
+                </li>
+                <li>
+                    <strong>Highest Risk Asset:</strong> <span id="insight-highest-risk">app.example.com</span> has the highest risk score and should be prioritized for security improvements.
+                </li>
+            </ul>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='main/js/report.js') }}"></script>
+    <script src="{{ url_for('static', filename='main/js/layout.js') }}"></script>
+{% endblock %}

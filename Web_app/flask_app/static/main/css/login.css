@@ -1,0 +1,100 @@
+/* Center div and set display and width properties*/
+.login_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    width: 100%
+}
+
+/* Set font properties for splash text and add small margin*/
+.login_splash
+{
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Set margin and width properties for page break*/
+hr
+{
+    margin: 0 0 3% 0;
+    width: 85%;
+}
+
+form
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: center;
+}
+
+/* Set margin, padding, and border properties for the two text inputs and set background color*/
+.login_container input[type="text"], input[type="password"]
+{
+    width: 20vw;
+    height: 5vh;
+    margin-bottom: 2%;
+    padding: 2%;
+    border: 1px solid white;
+    background-color: #d3d4d5;
+    font-size: 1.2rem;
+}
+
+/* Set color, font and padding properties*/
+.login_container button[type="submit"]
+{
+    width: 12vw;
+    padding: 2%;
+    background-color: #2D8CD2;
+    color: #FFFFFF;
+    font-size: 1.8rem;
+}
+
+/* Reverse background and text colors when button is hovered*/
+.login_container button[type="submit"]:hover
+{
+    background-color: #FFFFFF;
+    color: #2D8CD2;
+    transition: background-color, color 0.3s ease;
+}
+
+
+/* When the screen's max width is 650px or less, do this: */
+@media screen and (max-width: 650px)
+{
+    /* Set login div to full width of parent div*/
+    .login_container
+    {
+        width: 100%;
+    }
+}
+
+.oauth_container
+{
+    display: flex;
+}
+
+#google-sign-in-btn {
+    width: 12vw;
+    padding: 2%;
+    background-color: #DB4437;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    /*margin-top: 10px;*/
+    position: relative;
+    /*top: -10px; */
+}
+
+#google-sign-in-btn:hover {
+    background-color: #FFFFFF;
+    color: #DB4437;
+    transition: background-color, color 0.3s ease;
+}
+
+

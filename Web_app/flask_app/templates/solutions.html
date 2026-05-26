@@ -1,0 +1,120 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/main/css/solutions.css">
+{% endblock %}
+
+{% block title %}
+<title>Solutions</title>
+{% endblock %}
+
+{% block bodyclass %}solutions-page{% endblock %}
+
+
+
+
+{% block maincontent %}
+<div class="divider"></div>
+
+<div class="wrapper">
+    <div class="title_wrap">
+        <div class="title_left">
+            <div class="title">OWASP ZAP Top Ten Vulnerabilities</div>
+            <div class="description">This page includes recommneded soutions to the top ten vulnerabilities identified by OWASP ZAP, 
+                this is not a complete list of all error codes identified by the Web Vulnerability Scan & Detect Tool,
+                but does highlight those of the highest risk. For a complete list of possible vulnerabilities identified by the 
+                OWASP ZAP tool, click <a href="https://www.zaproxy.org/docs/alerts/">here</a> for detailed information, and recommneded solutions
+                to combat them. The content below is summerized from the risk information and alert details section of the OWASP ZAP website.</div>
+        </div>
+        <a href="https://www.zaproxy.org/docs/alerts/"><img src="../static/main/images/zap-logo.png" alt="OWASP ZAP logo"></a>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Broken Access Control</div>
+        <div class="solution">Description: Insufficient Authentication occurs when a web site permits an attacker to access sensitive content 
+                              or functionality without having to properly authenticate. Web-based administration tools are a good example of 
+                              web sites providing access to sensitive functionality. Depending on the specific online resource, these web 
+                              applications should not be directly accessible without requiring the user to properly verify their identity.</div>
+        <div class="solution">Recommended Solution: Architecture and Design Use an authentication framework or library such as the OWASP ESAPI Authentication feature.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Cryptographic Failures</div>
+        <div class="solution">Description: A request has been made that appears to conform to poor cryptography used by Telerik UI for 
+                              ASP.NET AJAX prior to v2017.2.621. An attacker could manipulate the value of the dp parameter to possibly 
+                              learn the machine key and upload arbitrary files, which could then lead to the compromise of ASP.NET 
+                              ViewStates and arbitrary code execution respectively. CVE-2017-9248 has a CVSSv3 score of 9.8.</div>
+        <div class="solution">Recommended Solution: See <a href="https://docs.telerik.com/devtools/aspnet-ajax/knowledge-base/common-cryptographic-weakness ">here</a>
+                              for update/mitigation guidance.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Injection</div>
+        <div class="solution">Description: Attack technique used for unauthorized execution of operating system commands. 
+                              This attack is possible when an application accepts untrusted input to build operating system 
+                              commands in an insecure manner involving improper data sanitization, and/or improper calling of external programs.</div>
+        <div class="solution">Recommended Solution: Do not trust client side input, even if there is client side validation in place. 
+                              In general, type check all data on the server side. If the application uses JDBC, use PreparedStatement or 
+                              CallableStatement, with parameters passed by '?' If the application uses ASP, use ADO Command Objects with 
+                              strong type checking and parameterized queries.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Insecure Design</div>
+        <div class="solution">Description: Referes to the structure and makeup of the backend of the web application, Insecure Design factors
+                              that open an application to a greater number of threats due to uncontrolled access and impropper saftey ratings used
+                              during design and implementation.</div>
+        <div class="solution">Recommended Solution: Implementation of a security policy to ensure that new additions to an application meet a set of
+                              set standards to ensure flaws are removed before they become a vulnerability.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Security Misconfiguration</div>
+        <div class="solution">Description: misconfiguration could allow an attacker to perform AJAX queries to the vulnerable website 
+                              from a malicious page loaded by the victim’s user agent. In order to perform authenticated AJAX queries, 
+                              the server must specify the header “Access-Control-Allow-Credentials: true” and the “Access-Control-Allow-Origin” 
+                              header must be set to null or the malicious page’s domain.</div>
+        <div class="solution">Recommended Solution: If a web resource contains sensitive information, the origin should be properly specified 
+                              in the Access-Control-Allow-Origin header. Only trusted websites needing this resource should be specified in this header, 
+                              with the most secured protocol supported.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Vulnerable and Outdated Components</div>
+        <div class="solution">Description: This referes to components of a web application that structure and components have become outdated or have
+                              known vulnerability risks. This includes libraries, framework and other software modules which have comprimised security 
+                              standards and open the rest of the web application to additional threats and vulnerabilities.</div>
+        <div class="solution">Recommended Solution: Consistant application maintnance and purging the application of outdated or unused componets can additional
+                              in reducing the risk posed by this vulnerability. As well and coninually reviewing and monitoring the status of the components used
+                              in the applications structure and design.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Identification and Authentication Failure</div>
+        <div class="solution">Description: Insufficient Authorization results when an application does not perform adequate authorization checks to ensure that 
+                              the user is performing a function or accessing data in a manner consistent with the security policy. Authorization procedures should 
+                              enforce what a user, service or application is permitted to do. When a user is authenticated to a web site, it does not necessarily 
+                              mean that the user should have full access to all content and functionality.</div>
+        <div class="solution">Recommended Solution: Phases: Architecture and Design; Operation Very carefully manage the setting, management, and handling of privileges. 
+                              Explicitly manage trust zones in the software. Phase: Architecture and Design Ensure that appropriate compartmentalization is built into the system design 
+                              and that the compartmentalization serves to allow for and further reinforce privilege separation functionality. Architects and designers should rely on the 
+                              principle of least privilege to decide when it is appropriate to use and to drop system privileges.
+        </div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Software and Data Integrity Failures</div>
+        <div class="solution">Description: The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained 
+                              access to this server from injecting a malicious content.</div>
+        <div class="solution">Recommended Solution: Provide a valid integrity attribute to the tag.
+        </div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Security Logging and Monitoring Failures</div>
+        <div class="solution">Description: Tracking events that occur within the web application and monitoring activity for potential instances of attacks or intrusions.
+                              The use of safe and reliable logging and monitoring features can aid in the identification of new vulnerabilities and help the administrators
+                              fix issues as they occur, before the vulnerability can be acted upon.</div>
+        <div class="solution">Solution: Ensure that tools designed to log and monitor activity are working and up to date, as well as establishing clear and understandable\
+                              logging procedures to lower ambiguity.</div>
+    </div>
+    <div class="vulnerability">
+        <div class="name">Server-Side Request Forgery</div>
+        <div class="solution">Description: The web server receives a remote address and retrieves the contents of this URL, but it does not sufficiently ensure that 
+                              the request is being sent to the expected destination.</div>
+        <div class="solution">Solution: Do not accept remote addresses as request parameters, and if you must, ensure that they are validated against an allow-list 
+                              of expected values.</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/main/css/website.css">
+{% endblock %}
+
+{% block title %}
+<title>Scan Dashboard</title>
+{% endblock %}
+
+{% block bodyclass %}dashboard-page{% endblock %}
+
+{% block maincontent %}
+    <div class="divider"></div>
+
+    <div class="dashboard_top">
+        <h2>My Websites</h2>
+        <div class="options">
+            {% if role != 'reader' and role != 'unknown'%}
+            <a href="/register"><button id="register">+ Add Website</button></a>
+            {% endif %}
+            <button class="filter_button">Filter Results</button>
+        </div>
+    </div>
+    
+    <div class="dashboard">
+        <div class="dashboard_row" id="header">
+            <div class="dashboard_box name_box">Website Name</div>
+            <div class="dashboard_box url_box" id="url_header">Website URL</div>
+            <div class="dashboard_box date_box" id="date_header">Date</div>
+            <div class="dashboard_box status_box">Status</div>
+            <div class="dashboard_box risk_box risk_header">High Risks</div>
+            <div class="dashboard_box risk_box risk_header">Medium Risks</div>
+            <div class="dashboard_box risk_box risk_header">Low Risks</div>
+            <div class="dashboard_box risk_box risk_header">Informational Risks</div>
+            <div class="dashboard_box dashboard_box_right report_box">Actions</div>
+        </div>
+    </div>
+    <!-- Dynamic rows will be appended here by dashboard.js -->
+    </div>
+
+    <div class="filter_options">
+        <form id="filter_form">
+            <input type="text" name="search" id="search" placeholder="Search for Website Name" required><br>
+            <label for="startTime">Start Date:</label>
+            <input class="calander" type="datetime-local" id="startTime" name="startTime"> <br>
+            <label for="endTime">End Date:</label>
+            <input class="calander" type="datetime-local" id="endTime" name="endTime"> <br>
+            <label for="selectStatus">Status: </label>
+                <select name="selectStatus" id="selectStatus">
+                    <option ></option>
+                    <option value="success">Successful</option>
+                    <option value="failed">Failed</option>
+                    <option value="running">Running</option>
+                </select> <br>
+            <label for="showHigh">High Risks:</label>
+            <input type="checkbox" name="showHigh" id="showHigh"> <br>
+            <label for="showMedium">Medium Risks:</label>
+            <input type="checkbox" name="showMedium" id="showMedium"> <br>
+            <label for="showLow">Low Risks:</label>
+            <input type="checkbox" name="showLow" id="showLow"> <br>
+            <label for="showInfo">Informational Risks:</label>
+            <input type="checkbox" name="showInfo" id="showInfo"> <br>
+        </form>
+        <div class="divider"></div>
+        <div class="filter_buttons">
+            <button id="clear_filter">Clear Filters</button>
+            <button id="apply_filter">Apply Filters</button>
+        </div>
+    </div>
+
+    <div class="info_cards">
+        <div class="card high_risk">
+            <h3>High Risk Issues</h3>
+            <h1 id="totalHigh">0</h1>
+        </div>
+        <div class="card med_risk">
+            <h3>Medium Risk Issues</h3>
+            <h1 id="totalMedium">0</h1>
+        </div>
+        <div class="card low_risk">
+            <h3>Low Risk Issues</h3>
+            <h1 id="totalLow">0</h1>
+        </div>
+        <div class="card info_risk">
+            <h3>Informational Risk Issues</h3>
+            <h1 id="totalInfo">0</h1>
+        </div>
+        <div class="card total">
+            <h2>Total Websites Scanned: <span id="totalScans">0</span></h2>
+            <div>
+                <p id="successfulScans">Successful: 0</p>
+                <p id="failedScans">Failed: 0</p>
+                <p id="runningScans">Running: 0</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='main/js/dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='main/js/layout.js') }}"></script>
+
+{% endblock %}
+

@@ -1,0 +1,150 @@
+{% extends 'shared/layout.html' %}
+
+{% block title %}
+<title>Schedule Scan</title>
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet"    href="{{ url_for('static', filename='main/css/schedule-scan.css') }}">
+<meta id="website_data" data-url="{{website_data[0]['website_url']}}" data-name="{{website_data[0]['website_name']}}" data-id="{{website_data[0]['website_id']}}">
+
+{% endblock %}
+
+{% block maincontent %}
+<div class="divider"></div>
+<div class="details">
+    <h2>Scheduled Scans</h2>
+    <div class="dashboard">
+        <div class="dashboard_row" id="header">
+            <div class="dashboard_box time_interval">Time Interval</div>
+            <div class="dashboard_box next_run">Next Run</div>
+            <div class="dashboard_box description">Description</div>
+            <div class="dashboard_box delete_box">Delete</div>
+        </div>
+    </div>
+    <h2>Schedule Scan</h2>
+
+    <form id="schedule-form">
+        <div class="nav-row" id="schedule-frequency-buttons">
+            <div class="nav-box">
+                <button type="button" class="nav-button" id="hourly">Hourly</button>
+            </div>
+            <div class="nav-box">
+                <button type="button" class="nav-button" id="daily">Daily</button>
+            </div>
+            <div class="nav-box">
+                <button type="button" class="nav-button" id="weekly">Weekly</button>
+            </div>
+            <div class="nav-box" id="last-nav">
+                <button type="button" class="nav-button" id="monthly">Monthly</button>
+            </div>
+        </div>
+        <div id="form-details">
+            <div class="form-header date-selector">
+                <h3>Day Of Month</h3>
+            </div>
+            <div class="form-row date-selector">
+                <div class="center-selector">
+                    <select id="date-selector-dropdown">
+                        <option class="day-selector-content">1</option>
+                        <option class="day-selector-content">2</option>
+                        <option class="day-selector-content">3</option>
+                        <option class="day-selector-content">4</option>
+                        <option class="day-selector-content">5</option>
+                        <option class="day-selector-content">6</option>
+                        <option class="day-selector-content">7</option>
+                        <option class="day-selector-content">8</option>
+                        <option class="day-selector-content">9</option>
+                        <option class="day-selector-content">10</option>
+                        <option class="day-selector-content">11</option>
+                        <option class="day-selector-content">12</option>
+                        <option class="day-selector-content">13</option>
+                        <option class="day-selector-content">14</option>
+                        <option class="day-selector-content">15</option>
+                        <option class="day-selector-content">16</option>
+                        <option class="day-selector-content">17</option>
+                        <option class="day-selector-content">18</option>
+                        <option class="day-selector-content">19</option>
+                        <option class="day-selector-content">20</option>
+                        <option class="day-selector-content">21</option>
+                        <option class="day-selector-content">22</option>
+                        <option class="day-selector-content">23</option>
+                        <option class="day-selector-content">24</option>
+                        <option class="day-selector-content">25</option>
+                        <option class="day-selector-content">26</option>
+                        <option class="day-selector-content">27</option>
+                        <option class="day-selector-content">28</option>
+                        <option class="day-selector-content">29</option>
+                        <option class="day-selector-content">30</option>
+                        <option class="day-selector-content">31</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-header frequency">
+                <h3>Frequency (Hours)</h3>
+            </div>
+            <div class="form-row frequency" id="frequency-buttons">
+                <button type="button" class="form-button" id="one-hour" value="1">1</button>
+                <button type="button" class="form-button" id="two-hour" value="2">2</button>
+                <button type="button" class="form-button" id="three-hour" value="3">3</button>
+                <button type="button" class="form-button" id="four-hour" value="4">4</button>
+                <button type="button" class="form-button" id="six-hour" value="6">6</button>
+                <button type="button" class="form-button" id="eight-hour" value="8">8</button>
+                <button type="button" class="form-button" id="twelve-hour" value="12">12</button>
+            </div>
+            <div class="form-header days-to-run">
+                <h3>
+                    Days To Run
+                </h3>
+            </div>
+            <div class="form-row days-to-run" id="day-buttons">
+                <button type="button" class="form-button" id="monday">Mon</button>
+                <button type="button" class="form-button" id="tuesday">Tue</button>
+                <button type="button" class="form-button" id="wednesday">Wed</button>
+                <button type="button" class="form-button" id="thursday">Thu</button>
+                <button type="button" class="form-button" id="friday">Fri</button>
+                <button type="button" class="form-button" id="saturday">Sat</button>
+                <button type="button" class="form-button" id="sunday">Sun</button>
+            </div>
+            <div class="form-header">
+                <h3>
+                    Time To Run
+                </h3>
+            </div>
+            <div class="form-row">
+                <div class="input-box time-range">
+                    Start
+                    <input type="text" id="start-time" name="start-time" placeholder="HH:MM">
+                </div>
+                <div class="input-box input-right time-range">
+                    End
+                    <input type="text" id="end-time" name="end-time" placeholder="HH:MM">
+                </div>
+                <div class="input-box specific-time">
+                    <input type="text" id="specific-time" name="specific-time" placeholder="HH:MM">
+                </div>
+            </div>
+            <div class="form-header">
+                <h3>
+                    Schedule Description
+                </h3>
+            </div>
+            <div class="form-row">
+                <div class="input-box" id="desc-box">
+                    <textarea id="schedule-desc" name="schedule-desc" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <button type="button" class="form-button schedule-button" id="submit-button">Schedule</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{ url_for('static', filename='main/js/schedule-scan.js') }}"></script>
+    <script src="{{ url_for('static', filename='main/js/layout.js') }}"></script>
+{% endblock %}
+

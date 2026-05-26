@@ -1,0 +1,8 @@
+flask
+gunicorn
+cryptography
+Flask-Failsafe
+mysql-connector-python
+python-dotenv
+requests
+authlib

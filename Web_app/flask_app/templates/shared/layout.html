@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block title %}
+  <title>Vulnerability Detect and Analysis</title>
+  {% endblock %}
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/navbar.css') }}" />
+  <link rel="stylesheet"    href="{{ url_for('static', filename='main/css/footer.css') }}" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  <style>
+    .brand { color:#fff; font-weight:800; font-size:1.25rem; letter-spacing:.02em; text-decoration:none; white-space:nowrap; }
+    body.light-mode .brand { color:#111; }
+  </style>
+  {% block extracss %}{% endblock %}
+
+</head>
+
+<body class="{% block bodyclass %}homepage{% endblock %}">
+         <div class="logo_container">
+             <a href="/home" id="homeButton" class="brand">Vulnerability Detect &amp; Analysis</a>
+            </div>
+
+        <!-- Unordered list for links on right side of navbar -->
+        <nav>
+
+
+
+            <ul class="align_left">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/solutions">Solutions</a></li>
+                <li><a href="/about">About</a></li>
+                  <li class="dropdown">
+                        <a href="#" class="dropbtn" id="settings-btn">Settings</a>
+                        <div class="dropdown-content" id="settings-dropdown">
+                            <a href="/settings" id="profile-link">Profile</a>
+                            <a href="#" id="toggle-theme">Switch Theme</a>
+                        </div>
+                    </li>
+                {% if user == 'Unknown'%}
+                <li><a href="/login">Login</a></li>
+                {% else %}
+                <li><a href="/logout">Logout</a></li>
+                {% endif %}
+            </ul>
+
+            <div class="user">
+                {% if user == 'Unknown'%}
+                <p>Vulnerability Detect &amp; Analysis</p>
+                {% else %}
+                <p>Logged in as {{user}}</p>
+                {% endif %}
+            </div>
+        </nav>
+
+        <!-- The main content  -->
+        <main>
+          {% block maincontent %}{% endblock %}
+        </main>
+
+</body>
+  {% block extrajs %}
+      <script src="{{ url_for('static', filename='main/js/layout.js') }}"></script>
+
+  {% endblock %}
+</html>

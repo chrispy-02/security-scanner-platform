@@ -1,0 +1,146 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="../static/main/css/website.css">
+
+
+<meta id="website_data" data-url="{{website_data[0]['website_url']}}" data-name="{{website_data[0]['website_name']}}" data-id="{{website_data[0]['website_id']}}">
+{% endblock %}
+
+{% block title %}
+<title>Website Dashboard</title>
+{% endblock %}
+
+{% block maincontent %}
+    <div class="divider"></div>
+
+    <div class="dashboard_top">
+        <div class="dashboard_top_header">
+            <h2>{{website_data[0]['website_name']}}</h2>
+        </div>
+        <div class="dashboard_top_buttons">
+            {% if role != 'reader' and role != 'unknown'%}
+            <button id="run_scan">Quick scan</button>
+            <button id="cancel">Cancel</button>
+            <button id="schedule_scan"><a href="/website/{{website_data[0]['website_id']}}/schedule-scan"> Schedule Scan</a></button>
+            {% if role == 'admin' %}
+            <button class="share_button">Manage Users</button>
+            {% endif %}
+            <button class="filter_button">Filter Results</button>
+            {% endif %}
+            {% if role == 'owner' or role == 'admin' %}
+            <button id="delete-website">Delete Website</button>
+            {% endif %}
+        </div>
+        
+    </div>
+    <div class="dashboard">
+        <div class="dashboard_row" id="header">
+            <div class="dashboard_box url_box" id="url_header">Website URL</div>
+            <div class="dashboard_box date_box" id="date_header">Date</div>
+            <div class="dashboard_box status_box">Status</div>
+            <div class="dashboard_box risk_box risk_header">High Risks</div>
+            <div class="dashboard_box risk_box risk_header">Medium Risks</div>
+            <div class="dashboard_box risk_box risk_header">Low Risks</div>
+            <div class="dashboard_box risk_box risk_header">Informational Risks</div>
+            <div class="dashboard_box dashboard_box_right report_box">Actions</div>
+        </div>
+    </div>
+    
+
+    <!-- Dynamic rows will be appended here by dashboard.js -->
+  </div>
+
+  <div class="filter_options">
+    <form id="filter_form">
+        <input type="text" name="search" id="search" placeholder="Search for Website Name" required><br>
+        <label for="startTime">Start Date:</label>
+        <input class="calander" type="datetime-local" id="startTime" name="startTime"> <br>
+        <label for="endTime">End Date:</label>
+        <input class="calander" type="datetime-local" id="endTime" name="endTime"> <br>
+        <label for="selectStatus">Status: </label>
+            <select name="selectStatus" id="selectStatus">
+                <option ></option>
+                <option value="successful">Successful</option>
+                <option value="failed">Failed</option>
+                <option value="running">Running</option>
+            </select> <br>
+        <label for="showHigh">High Risks:</label>
+        <input type="checkbox" name="showHigh" id="showHigh"> <br>
+        <label for="showMedium">Medium Risks:</label>
+        <input type="checkbox" name="showMedium" id="showMedium"> <br>
+        <label for="showLow">Low Risks:</label>
+        <input type="checkbox" name="showLow" id="showLow"> <br>
+        <label for="showInfo">Informational Risks:</label>
+        <input type="checkbox" name="showInfo" id="showInfo"> <br>
+    </form>
+    <div class="divider"></div>
+    <div class="filter_buttons">
+        <button id="clear_filter">Clear Filters</button>
+        <button id="apply_filter">Apply Filters</button>
+    </div>
+  </div>
+
+  <div id="confirm">
+    <div class="confirm-row">
+        <p id="confirm-text"></p>
+    </div>
+    <div class="confirm-row">
+        <button id="confirm-button">Confirm</button>
+        <button id="confirm-cancel-button">Cancel</button>
+    </div>
+  </div>
+  {% if role == 'admin' %}
+      <div class="share_options">
+        <p class="share_splash">Add user to this group</p>
+
+        <ul>
+            {% for u in access_list %}
+                <li>
+                    {{ u['email'] }}
+                    {% if u['email'] == user%}
+                        <p>You cannot remove yourself.</p>
+                    {% elif u['access_type'] == 'Authorized'%}
+                    <form method="POST">
+                        <button type="submit" name="delete_user" value="{{ u }}" class="del_usr_btn">Remove Access</button>
+                    </form>
+                    {% elif u['access_type'] == 'Owner'%}
+                        <p>Website group owner cannot be removed.</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+
+
+        <form class="share_form" id="share_form" method="POST">
+            <input type="text" name="share_email" id="share_email" placeholder="Enter email" required>
+            <button id="share_btn" type="submit" name="add_user">Add User</button>
+        </form>
+      </div>
+  {% endif %}
+
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            {% if category == "Success" %}
+                <div class="flash_suc">
+                    <p>{{ message }}</p>
+                </div>
+            {% else %}
+                <div class="flash_fail">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+{% endblock %}
+
+
+{% block extrajs %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="{{ url_for('static', filename='main/js/website.js') }}"></script>
+    <script src="{{ url_for('static', filename='main/js/layout.js') }}"></script>
+{% endblock %}
+
