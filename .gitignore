@@ -1,0 +1,43 @@
+# ── Secrets / environment ────────────────────────────────────────────────────
+.env
+*.env
+!.env.example
+Web_app/.env
+
+# ── Local database dump (kept local; never published) ────────────────────────
+mckesson.tar.gz
+*.tar.gz
+*.sql.gz
+
+# ── Original capstone assets kept local; clean/redacted copies live in docs/ ──
+mckesson-*.png
+mckesson-page.pdf
+
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# ── OS / editor cruft ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
+
+# ── Project planning (internal, not part of the public product) ──────────────
+PLAN.md
+.planning/
+
+# ── Logs / runtime ───────────────────────────────────────────────────────────
+*.log
