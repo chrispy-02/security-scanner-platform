@@ -1,0 +1,40 @@
+name: ZAP Baseline Scan
+
+# Human-readable run title; the app matches the run by the "#<scan_id>" token to
+# correlate the GitHub run with the scan row stored in MySQL.
+run-name: "ZAP scan #${{ inputs.scan_id }} - ${{ inputs.scan_name }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: "Target URL to scan (must be an authorized target)"
+        required: true
+      scan_name:
+        description: "Human-friendly scan name"
+        required: false
+        default: "manual"
+      scan_id:
+        description: "Correlation id supplied by the application"
+        required: false
+        default: "0"
+
+permissions:
+  contents: read
+
+jobs:
+  zap_baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OWASP ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: ${{ github.event.inputs.target_url }}
+          # Do not open GitHub issues for findings; this app stores results in MySQL.
+          allow_issue_writing: false
+          # Never fail the job on findings — the app needs a 'success' conclusion to
+          # download and parse the report artifact.
+          fail_action: false
+          # The artifact (report_json.json / report_html.html / report_md.md) is
+          # downloaded and parsed by the app's scan backend.
+          artifact_name: zap-scan-results
