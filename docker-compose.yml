@@ -1,0 +1,46 @@
+# Local development / demo stack for Vulnerability Detect and Analysis.
+# 1. cp .env.example .env   (then edit values)
+# 2. docker compose up --build
+# 3. open http://localhost:8080  (demo logins are seeded automatically)
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: security-scanner-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpass}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-vulnscan}
+      MYSQL_USER: ${MYSQL_USER:-scanner}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-scannerpass}
+    ports:
+      - "33306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD:-rootpass}"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  web:
+    container_name: security-scanner-web
+    build:
+      context: ./Web_app
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      DOCKER_ENV: "true"
+      MYSQL_HOST: db
+      MYSQL_PORT: "3306"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    # Seed demo schema + data (idempotent), then start the production server.
+    command: >
+      sh -c "python seed_demo.py || true &&
+             gunicorn --bind 0.0.0.0:${PORT:-8080} --workers 1 --threads 8 --timeout 120 app:app"
+
+volumes:
+  db_data:
