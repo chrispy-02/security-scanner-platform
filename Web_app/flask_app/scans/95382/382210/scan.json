@@ -1,0 +1,2019 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.16.1",
+	"@generated": "Wed, 2 Apr 2025 23:51:10",
+	"site":[ 
+		{
+			"@name": "https://www.zaproxy.org",
+			"@host": "www.zaproxy.org",
+			"@port": "443",
+			"@ssl": "true",
+			"alerts": [ 
+				{
+					"pluginid": "10062",
+					"alertRef": "10062",
+					"alert": "PII Disclosure",
+					"name": "PII Disclosure",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "High (Medium)",
+					"desc": "<p>The response contains Personally Identifiable Information, such as CC number, SSN and similar sensitive data.</p>",
+					"instances":[ 
+						{
+							"id": "162",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "5264 8109 66944441",
+							"otherinfo": "Credit Card Type detected: Mastercard"
+						},
+						{
+							"id": "131",
+							"uri": "https://www.zaproxy.org/addons/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "4644341319151",
+							"otherinfo": "Credit Card Type detected: Visa\nBank Identification Number: 464434\nBrand: VISA\nCategory: PREMIER\nIssuer: KAW VALLEY STATE BANK AND TRUST COMPANY"
+						}
+					],
+					"count": "2",
+					"solution": "<p>Check the response for the potential presence of personally identifiable information (PII), ensure nothing sensitive is leaked by the application.</p>",
+					"otherinfo": "<p>Credit Card Type detected: Mastercard</p>",
+					"reference": "",
+					"cweid": "359",
+					"wascid": "13",
+					"sourceid": "2528"
+				},
+				{
+					"pluginid": "90022",
+					"alertRef": "90022",
+					"alert": "Application Error Disclosure",
+					"name": "Application Error Disclosure",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>This page contains an error/warning message that may disclose sensitive information like the location of the file that produced the unhandled exception. This information can be used to launch further attacks against the web application. The alert could be a false positive if the error message is found inside a documentation page.</p>",
+					"instances":[ 
+						{
+							"id": "180",
+							"uri": "https://www.zaproxy.org/docs/alerts/30001/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "132",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/database/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "JDBC Driver",
+							"otherinfo": ""
+						},
+						{
+							"id": "133",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/graphql-support/options/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "invalid query",
+							"otherinfo": ""
+						},
+						{
+							"id": "145",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/passive-scan-rules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "159",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Error Occurred While Processing Request",
+							"otherinfo": ""
+						},
+						{
+							"id": "175",
+							"uri": "https://www.zaproxy.org/docs/desktop/releases/2.7.0/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "internal error",
+							"otherinfo": ""
+						},
+						{
+							"id": "176",
+							"uri": "https://www.zaproxy.org/docs/desktop/start/features/custompages/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "193",
+							"uri": "https://www.zaproxy.org/docs/desktop/start/features/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "168",
+							"uri": "https://www.zaproxy.org/docs/desktop/ui/dialogs/session/contexts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "143",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						}
+					],
+					"count": "10",
+					"solution": "<p>Review the source code of this page. Implement custom error pages. Consider implementing a mechanism to provide a unique error reference/identifier to the client (browser) while logging the details on the server side and not exposing them to the user.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "550",
+					"wascid": "13",
+					"sourceid": "3970"
+				},
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-1",
+					"alert": "Content Security Policy (CSP) Header Not Set",
+					"name": "Content Security Policy (CSP) Header Not Set",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page \u2014 covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.</p>",
+					"instances":[ 
+						{
+							"id": "9",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "106",
+							"uri": "https://www.zaproxy.org/community/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "56",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "70",
+							"uri": "https://www.zaproxy.org/docs/alerts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "92",
+							"uri": "https://www.zaproxy.org/docs/automate/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "111",
+							"uri": "https://www.zaproxy.org/docs/statistics/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "91",
+							"uri": "https://www.zaproxy.org/getting-started/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "0",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "115",
+							"uri": "https://www.zaproxy.org/success/jit/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "52",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "10",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10098",
+					"alertRef": "10098",
+					"alert": "Cross-Domain Misconfiguration",
+					"name": "Cross-Domain Misconfiguration",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>Web browser data loading may be possible, due to a Cross Origin Resource Sharing (CORS) misconfiguration on the web server.</p>",
+					"instances":[ 
+						{
+							"id": "156",
+							"uri": "https://www.zaproxy.org/docs/automate/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "134",
+							"uri": "https://www.zaproxy.org/docs/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "137",
+							"uri": "https://www.zaproxy.org/getting-started/images/firefox-protection-hud.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "128",
+							"uri": "https://www.zaproxy.org/img/checkmarx.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "62",
+							"uri": "https://www.zaproxy.org/img/favicon.ico",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "125",
+							"uri": "https://www.zaproxy.org/img/search.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "122",
+							"uri": "https://www.zaproxy.org/img/zap-by-checkmarx.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "144",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "31",
+							"uri": "https://www.zaproxy.org/main.98e1bf.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "46",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "140",
+							"uri": "https://www.zaproxy.org/pdf/ZAPGettingStartedGuide-2.16.pdf",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						},
+						{
+							"id": "68",
+							"uri": "https://www.zaproxy.org/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Access-Control-Allow-Origin: *",
+							"otherinfo": "The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing."
+						}
+					],
+					"count": "12",
+					"solution": "<p>Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).</p><p>Configure the \"Access-Control-Allow-Origin\" HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.</p>",
+					"otherinfo": "<p>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</p>",
+					"reference": "<p>https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy</p>",
+					"cweid": "264",
+					"wascid": "14",
+					"sourceid": "2410"
+				},
+				{
+					"pluginid": "10099",
+					"alertRef": "10099",
+					"alert": "Source Code Disclosure - SQL",
+					"name": "Source Code Disclosure - SQL",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medium (Medium)",
+					"desc": "<p>Application Source Code was disclosed by the web server. - SQL</p>",
+					"instances":[ 
+						{
+							"id": "172",
+							"uri": "https://www.zaproxy.org/blog/2022-12-24-12-days-of-zapmas/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select them from either of those and then view them or open them in the Request Editor or a Requester tab.",
+							"otherinfo": ""
+						},
+						{
+							"id": "167",
+							"uri": "https://www.zaproxy.org/docs/api/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Select a language for code samples from the tabs above or the mobile navigation menu.",
+							"otherinfo": ""
+						},
+						{
+							"id": "164",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/ajax-spider/scandialog/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select one of the users available from the selected context, to perform the spider scan as a user ",
+							"otherinfo": ""
+						},
+						{
+							"id": "166",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/parameter-digger/dialog/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select the methods that you want to use. By default GET is the one which is selected. You can choose one or multiple methods from the list, by simply using ctrl ",
+							"otherinfo": ""
+						},
+						{
+							"id": "151",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/quick-start/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Select the browser you want from the pull",
+							"otherinfo": ""
+						},
+						{
+							"id": "153",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/report-generation/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Select one or more to only include alerts and other information from those contexts in the report. You can use the shift or control keys to select and unselect more than one context.",
+							"otherinfo": ""
+						},
+						{
+							"id": "154",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/retest/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select one or more alerts from the Alert tab, right click on them and choose ",
+							"otherinfo": ""
+						},
+						{
+							"id": "174",
+							"uri": "https://www.zaproxy.org/docs/desktop/releases/1.3.1/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select https site from Active scan window if theres an http equivalent ",
+							"otherinfo": ""
+						},
+						{
+							"id": "195",
+							"uri": "https://www.zaproxy.org/docs/desktop/releases/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select https site from Active scan window if theres an http equivalent ",
+							"otherinfo": ""
+						},
+						{
+							"id": "178",
+							"uri": "https://www.zaproxy.org/docs/desktop/start/features/authentication/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select the authentication method required from the drop",
+							"otherinfo": ""
+						},
+						{
+							"id": "179",
+							"uri": "https://www.zaproxy.org/docs/desktop/ui/dialogs/options/language/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select the newly imported language from the language selection drop down menu on the top of the screen.",
+							"otherinfo": ""
+						},
+						{
+							"id": "155",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "select https site from Active scan window if theres an http equivalent ",
+							"otherinfo": ""
+						}
+					],
+					"count": "12",
+					"solution": "<p>Ensure that application Source Code is not available with alternative extensions, and ensure that source code is not present within other files or data deployed to the web server, or served by the web server.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://www.wsj.com/articles/BL-CIOB-2999</p>",
+					"cweid": "540",
+					"wascid": "13",
+					"sourceid": "3299"
+				},
+				{
+					"pluginid": "90003",
+					"alertRef": "90003",
+					"alert": "Sub Resource Integrity Attribute Missing",
+					"name": "Sub Resource Integrity Attribute Missing",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medium (High)",
+					"desc": "<p>The integrity attribute is missing on a script or link tag served by an external server. The integrity tag prevents an attacker who have gained access to this server from injecting a malicious content.</p>",
+					"instances":[ 
+						{
+							"id": "37",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css?family=Istok+Web|Open+Sans:400,700|Rubik&display=swap\" rel=\"stylesheet\">",
+							"otherinfo": ""
+						},
+						{
+							"id": "35",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css?family=Quicksand:500,700\" rel=\"stylesheet\">",
+							"otherinfo": ""
+						},
+						{
+							"id": "41",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "39",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "21",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css?family=Istok+Web|Open+Sans:400,700|Rubik&display=swap\" rel=\"stylesheet\">",
+							"otherinfo": ""
+						},
+						{
+							"id": "19",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<link href=\"https://fonts.googleapis.com/css?family=Quicksand:500,700\" rel=\"stylesheet\">",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "22",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						}
+					],
+					"count": "8",
+					"solution": "<p>Provide a valid integrity attribute to the tag.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity</p>",
+					"cweid": "345",
+					"wascid": "15",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10017",
+					"alertRef": "10017",
+					"alert": "Cross-Domain JavaScript Source File Inclusion",
+					"name": "Cross-Domain JavaScript Source File Inclusion",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The page includes one or more script files from a third-party domain.</p>",
+					"instances":[ 
+						{
+							"id": "10",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "11",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "57",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "61",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "72",
+							"uri": "https://www.zaproxy.org/docs/alerts/",
+							"method": "GET",
+							"param": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "73",
+							"uri": "https://www.zaproxy.org/docs/alerts/",
+							"method": "GET",
+							"param": "https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "4",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "55",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js",
+							"attack": "",
+							"evidence": "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.6/lunr.min.js\"></script>",
+							"otherinfo": ""
+						},
+						{
+							"id": "60",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L",
+							"attack": "",
+							"evidence": "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-JDLGW1172L\"></script>",
+							"otherinfo": ""
+						}
+					],
+					"count": "10",
+					"solution": "<p>Ensure JavaScript source files are loaded from only trusted sources, and the sources can't be controlled by end users of the application.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "829",
+					"wascid": "15",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10023",
+					"alertRef": "10023",
+					"alert": "Information Disclosure - Debug Error Messages",
+					"name": "Information Disclosure - Debug Error Messages",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The response appeared to contain common error messages returned by platforms such as ASP.NET, and Web-servers such as IIS and Apache. You can configure the list of common debug messages.</p>",
+					"instances":[ 
+						{
+							"id": "181",
+							"uri": "https://www.zaproxy.org/docs/alerts/30001/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "183",
+							"uri": "https://www.zaproxy.org/docs/alerts/40008/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "internal server error",
+							"otherinfo": ""
+						},
+						{
+							"id": "147",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/passive-scan-rules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "161",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Error Occurred While Processing Request",
+							"otherinfo": ""
+						},
+						{
+							"id": "177",
+							"uri": "https://www.zaproxy.org/docs/desktop/start/features/custompages/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "194",
+							"uri": "https://www.zaproxy.org/docs/desktop/start/features/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "169",
+							"uri": "https://www.zaproxy.org/docs/desktop/ui/dialogs/session/contexts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						},
+						{
+							"id": "149",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Internal Server Error",
+							"otherinfo": ""
+						}
+					],
+					"count": "8",
+					"solution": "<p>Disable debugging messages before pushing to production.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "1295",
+					"wascid": "13",
+					"sourceid": "3970"
+				},
+				{
+					"pluginid": "90004",
+					"alertRef": "90004-1",
+					"alert": "Insufficient Site Isolation Against Spectre Vulnerability",
+					"name": "Insufficient Site Isolation Against Spectre Vulnerability",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Cross-Origin-Resource-Policy header is an opt-in header designed to counter side-channels attacks like Spectre. Resource should be specifically set as shareable amongst different origins.</p>",
+					"instances":[ 
+						{
+							"id": "26",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "87",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "80",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "Cross-Origin-Resource-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "27",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "88",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "81",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "Cross-Origin-Embedder-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "29",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "89",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "82",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "Cross-Origin-Opener-Policy",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "9",
+					"solution": "<p>Ensure that the application/web server sets the Cross-Origin-Resource-Policy header appropriately, and that it sets the Cross-Origin-Resource-Policy header to 'same-origin' for all web pages.</p><p>'same-site' is considered as less secured and should be avoided.</p><p>If resources must be shared, set the header to 'cross-origin'.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that supports the Cross-Origin-Resource-Policy header (https://caniuse.com/mdn-http_headers_cross-origin-resource-policy).</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy</p>",
+					"cweid": "693",
+					"wascid": "14",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10063",
+					"alertRef": "10063-1",
+					"alert": "Permissions Policy Header Not Set",
+					"name": "Permissions Policy Header Not Set",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>Permissions Policy Header is an added layer of security that helps to restrict from unauthorized access or usage of browser/client features by web resources. This policy ensures the user privacy by limiting or specifying the features of the browsers can be used by the web resources. Permissions Policy provides a set of standard HTTP headers that allow website owners to limit which features of browsers can be used by the page such as camera, microphone, location, full screen etc.</p>",
+					"instances":[ 
+						{
+							"id": "25",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "109",
+							"uri": "https://www.zaproxy.org/community/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "85",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "100",
+							"uri": "https://www.zaproxy.org/docs/automate/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "119",
+							"uri": "https://www.zaproxy.org/docs/statistics/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "121",
+							"uri": "https://www.zaproxy.org/download/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "107",
+							"uri": "https://www.zaproxy.org/getting-started/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "103",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "15",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "120",
+							"uri": "https://www.zaproxy.org/success/jit/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "79",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy</p><p>https://developer.chrome.com/blog/feature-policy/</p><p>https://scotthelme.co.uk/a-new-security-header-feature-policy/</p><p>https://w3c.github.io/webappsec-feature-policy/</p><p>https://www.smashingmagazine.com/2018/12/feature-policy/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "2",
+					"alertRef": "2",
+					"alert": "Private IP Disclosure",
+					"name": "Private IP Disclosure",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>A private IP (such as 10.x.x.x, 172.x.x.x, 192.168.x.x) or an Amazon EC2 private hostname (for example, ip-10-0-56-78) has been found in the HTTP response body. This information might be helpful for further attacks targeting internal systems.</p>",
+					"instances":[ 
+						{
+							"id": "173",
+							"uri": "https://www.zaproxy.org/blog/2022-08-25-zap-on-raspberry-pi/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.43.112",
+							"otherinfo": "192.168.43.112\n"
+						},
+						{
+							"id": "182",
+							"uri": "https://www.zaproxy.org/docs/alerts/10107/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.0.11:1080",
+							"otherinfo": "192.168.0.11:1080\n"
+						},
+						{
+							"id": "186",
+							"uri": "https://www.zaproxy.org/docs/alerts/110006/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ip-10-0-56-78",
+							"otherinfo": "ip-10-0-56-78\n"
+						},
+						{
+							"id": "163",
+							"uri": "https://www.zaproxy.org/docs/alerts/2/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ip-10-0-56-78",
+							"otherinfo": "ip-10-0-56-78\n192.168.36.127\n"
+						},
+						{
+							"id": "189",
+							"uri": "https://www.zaproxy.org/docs/alerts/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ip-10-0-56-78",
+							"otherinfo": "ip-10-0-56-78\nip-10-0-56-78\n"
+						},
+						{
+							"id": "170",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/network/options/localservers/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.0.14:8080",
+							"otherinfo": "192.168.0.14:8080\n192.168.0.14:8080\n192.168.0.14:8080\n"
+						},
+						{
+							"id": "171",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/network/options/servercertificates/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "192.168.56.104",
+							"otherinfo": "192.168.56.104\n192.168.56.104\n192.168.56.104\n192.168.56.104\n192.168.56.104\n"
+						},
+						{
+							"id": "146",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/passive-scan-rules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ip-10-0-56-78",
+							"otherinfo": "ip-10-0-56-78\n"
+						},
+						{
+							"id": "160",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ip-10-0-56-78",
+							"otherinfo": "ip-10-0-56-78\n10.255.255.255\n10.0.0.0\n"
+						},
+						{
+							"id": "190",
+							"uri": "https://www.zaproxy.org/docs/docker/about/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "172.17.0.8:8090",
+							"otherinfo": "172.17.0.8:8090\n"
+						},
+						{
+							"id": "148",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "ip-10-0-56-78",
+							"otherinfo": "ip-10-0-56-78\nip-10-0-56-78\n"
+						}
+					],
+					"count": "11",
+					"solution": "<p>Remove the private IP address from the HTTP response body. For comments, use JSP/ASP/PHP comment instead of HTML/JavaScript comment which can be seen by client browsers.</p>",
+					"otherinfo": "<p>192.168.43.112</p><p></p>",
+					"reference": "<p>https://tools.ietf.org/html/rfc1918</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "3500"
+				},
+				{
+					"pluginid": "10035",
+					"alertRef": "10035-1",
+					"alert": "Strict-Transport-Security Header Not Set",
+					"name": "Strict-Transport-Security Header Not Set",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Low (High)",
+					"desc": "<p>HTTP Strict Transport Security (HSTS) is a web security policy mechanism whereby a web server declares that complying user agents (such as a web browser) are to interact with it using only secure HTTPS connections (i.e. HTTP layered over TLS/SSL). HSTS is an IETF standards track protocol and is specified in RFC 6797.</p>",
+					"instances":[ 
+						{
+							"id": "157",
+							"uri": "https://www.zaproxy.org/docs/automate/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "135",
+							"uri": "https://www.zaproxy.org/docs/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "138",
+							"uri": "https://www.zaproxy.org/getting-started/images/firefox-protection-hud.png",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "129",
+							"uri": "https://www.zaproxy.org/img/checkmarx.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "67",
+							"uri": "https://www.zaproxy.org/img/favicon.ico",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "126",
+							"uri": "https://www.zaproxy.org/img/search.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "123",
+							"uri": "https://www.zaproxy.org/img/zap-by-checkmarx.svg",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "150",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "34",
+							"uri": "https://www.zaproxy.org/main.98e1bf.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "59",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "141",
+							"uri": "https://www.zaproxy.org/pdf/ZAPGettingStartedGuide-2.16.pdf",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "97",
+							"uri": "https://www.zaproxy.org/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "12",
+					"solution": "<p>Ensure that your web server, application server, load balancer, etc. is configured to enforce Strict-Transport-Security.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html</p><p>https://owasp.org/www-community/Security_Headers</p><p>https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security</p><p>https://caniuse.com/stricttransportsecurity</p><p>https://datatracker.ietf.org/doc/html/rfc6797</p>",
+					"cweid": "319",
+					"wascid": "15",
+					"sourceid": "2410"
+				},
+				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Timestamp Disclosure - Unix",
+					"name": "Timestamp Disclosure - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Low (Low)",
+					"desc": "<p>A timestamp was disclosed by the application/web server. - Unix</p>",
+					"instances":[ 
+						{
+							"id": "185",
+							"uri": "https://www.zaproxy.org/docs/alerts/10096/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1704114087",
+							"otherinfo": "1704114087, which evaluates to: 2024-01-01 13:01:27."
+						},
+						{
+							"id": "187",
+							"uri": "https://www.zaproxy.org/docs/alerts/120002-1/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1516239022",
+							"otherinfo": "1516239022, which evaluates to: 2018-01-18 01:30:22."
+						},
+						{
+							"id": "188",
+							"uri": "https://www.zaproxy.org/docs/alerts/120002-2/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1516239022",
+							"otherinfo": "1516239022, which evaluates to: 2018-01-18 01:30:22."
+						}
+					],
+					"count": "3",
+					"solution": "<p>Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.</p>",
+					"otherinfo": "<p>1704114087, which evaluates to: 2024-01-01 13:01:27.</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "4488"
+				},
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "X-Content-Type-Options Header Missing",
+					"name": "X-Content-Type-Options Header Missing",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Low (Medium)",
+					"desc": "<p>The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"id": "158",
+							"uri": "https://www.zaproxy.org/docs/automate/index.xml",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "136",
+							"uri": "https://www.zaproxy.org/docs/index.xml",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "139",
+							"uri": "https://www.zaproxy.org/getting-started/images/firefox-protection-hud.png",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "130",
+							"uri": "https://www.zaproxy.org/img/checkmarx.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "76",
+							"uri": "https://www.zaproxy.org/img/favicon.ico",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "127",
+							"uri": "https://www.zaproxy.org/img/search.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "124",
+							"uri": "https://www.zaproxy.org/img/zap-by-checkmarx.svg",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "152",
+							"uri": "https://www.zaproxy.org/index.xml",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "44",
+							"uri": "https://www.zaproxy.org/main.98e1bf.css",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "65",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "142",
+							"uri": "https://www.zaproxy.org/pdf/ZAPGettingStartedGuide-2.16.pdf",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						},
+						{
+							"id": "102",
+							"uri": "https://www.zaproxy.org/sitemap.xml",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.\nAt \"High\" threshold this scan rule will not alert on client or server error responses."
+						}
+					],
+					"count": "12",
+					"solution": "<p>Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.</p><p>If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.</p>",
+					"otherinfo": "<p>This issue still applies to error type pages (401, 403, 500, etc.) as those pages are often still affected by injection issues, in which case there is still concern for browsers sniffing pages away from their actual content type.</p><p>At \"High\" threshold this scan rule will not alert on client or server error responses.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "2410"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Information Disclosure - Suspicious Comments",
+					"name": "Information Disclosure - Suspicious Comments",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
+					"instances":[ 
+						{
+							"id": "54",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "from",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"//,atrule:{pattern:/@[\\w-]+[\\s\\S]*?(?:;|(?=\\s*\\{))/,inside:{rule:/@[\\w-]+/}},url:{pattern:RegExp(\"url\\\\((?:\"+t.source+\"|[^\\n\\r()\", see evidence field for the suspicious comment/snippet."
+						}
+					],
+					"count": "1",
+					"solution": "<p>Remove all comments that return information that may help an attacker and fix any underlying problems they refer to.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in likely comment: \"//,atrule:{pattern:/@[\\w-]+[\\s\\S]*?(?:;|(?=\\s*\\{))/,inside:{rule:/@[\\w-]+/}},url:{pattern:RegExp(\"url\\\\((?:\"+t.source+\"|[^\\n\\r()\", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "615",
+					"wascid": "13",
+					"sourceid": "103"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Modern Web Application",
+					"name": "Modern Web Application",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"id": "13",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "108",
+							"uri": "https://www.zaproxy.org/community/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "75",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "116",
+							"uri": "https://www.zaproxy.org/docs/alerts/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "93",
+							"uri": "https://www.zaproxy.org/docs/automate/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "113",
+							"uri": "https://www.zaproxy.org/docs/statistics/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "96",
+							"uri": "https://www.zaproxy.org/getting-started/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "5",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "117",
+							"uri": "https://www.zaproxy.org/success/jit/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						},
+						{
+							"id": "63",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a class=\"toggler\" href=\"#\">\n              <img height=\"20\" width=\"20\" src=\"/img/search.svg\" alt=\"Search icon\"/>\n            </a>",
+							"otherinfo": "Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application."
+						}
+					],
+					"count": "10",
+					"solution": "<p>This is an informational alert and so no changes are required.</p>",
+					"otherinfo": "<p>Links have been found that do not have traditional href attributes, which is an indication that this is a modern web application.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10015",
+					"alertRef": "10015",
+					"alert": "Re-examine Cache-control Directives",
+					"name": "Re-examine Cache-control Directives",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>The cache-control header has not been set properly or is missing, allowing the browser and proxies to cache content. For static assets like css, js, or image files this might be intended, however, the resources should be reviewed to ensure that no sensitive content will be cached.</p>",
+					"instances":[ 
+						{
+							"id": "7",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "104",
+							"uri": "https://www.zaproxy.org/community/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "53",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "64",
+							"uri": "https://www.zaproxy.org/docs/alerts/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "90",
+							"uri": "https://www.zaproxy.org/docs/automate/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "110",
+							"uri": "https://www.zaproxy.org/docs/statistics/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "114",
+							"uri": "https://www.zaproxy.org/download/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "86",
+							"uri": "https://www.zaproxy.org/getting-started/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "66",
+							"uri": "https://www.zaproxy.org/sitemap.xml",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "112",
+							"uri": "https://www.zaproxy.org/success/jit/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "47",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "cache-control",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>For secure content, ensure the cache-control HTTP header is set with \"no-cache, no-store, must-revalidate\". If an asset should be cached consider setting the directives \"public, max-age, immutable\".</p>",
+					"otherinfo": "",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html#web-content-caching</p><p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control</p><p>https://grayduck.mn/2021/09/13/cache-control-recommendations/</p>",
+					"cweid": "525",
+					"wascid": "13",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10050",
+					"alertRef": "10050-1",
+					"alert": "Retrieved from Cache",
+					"name": "Retrieved from Cache",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The content was retrieved from a shared cache. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"id": "17",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "83",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "94",
+							"uri": "https://www.zaproxy.org/docs/automate/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "101",
+							"uri": "https://www.zaproxy.org/getting-started/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "6",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "95",
+							"uri": "https://www.zaproxy.org/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "HIT",
+							"otherinfo": ""
+						},
+						{
+							"id": "2",
+							"uri": "https://www.zaproxy.org/docs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "1",
+							"uri": "https://www.zaproxy.org/docs/alerts",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "33",
+							"uri": "https://www.zaproxy.org/main.98e1bf.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 274",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "58",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 274",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						},
+						{
+							"id": "69",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Age: 0",
+							"otherinfo": "The presence of the 'Age' header indicates that a HTTP/1.1 compliant caching server is in use."
+						}
+					],
+					"count": "11",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://tools.ietf.org/html/rfc7234</p><p>https://tools.ietf.org/html/rfc7231</p><p>https://www.rfc-editor.org/rfc/rfc9110.html</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10049",
+					"alertRef": "10049",
+					"alert": "Storable and Cacheable Content",
+					"name": "Storable and Cacheable Content",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informational (Medium)",
+					"desc": "<p>The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where \"shared\" caching servers such as \"proxy\" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.</p>",
+					"instances":[ 
+						{
+							"id": "20",
+							"uri": "https://www.zaproxy.org/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "8",
+							"uri": "https://www.zaproxy.org/docs",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "84",
+							"uri": "https://www.zaproxy.org/docs/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "12",
+							"uri": "https://www.zaproxy.org/docs/alerts",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "99",
+							"uri": "https://www.zaproxy.org/docs/automate/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "77",
+							"uri": "https://www.zaproxy.org/img/favicon.ico",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=14400",
+							"otherinfo": ""
+						},
+						{
+							"id": "45",
+							"uri": "https://www.zaproxy.org/main.98e1bf.css",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=14400",
+							"otherinfo": ""
+						},
+						{
+							"id": "98",
+							"uri": "https://www.zaproxy.org/main.aa09f7.js",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=14400",
+							"otherinfo": ""
+						},
+						{
+							"id": "14",
+							"uri": "https://www.zaproxy.org/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=14400",
+							"otherinfo": ""
+						},
+						{
+							"id": "105",
+							"uri": "https://www.zaproxy.org/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						},
+						{
+							"id": "78",
+							"uri": "https://www.zaproxy.org/videos/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "max-age=600",
+							"otherinfo": ""
+						}
+					],
+					"count": "11",
+					"solution": "<p>Validate that the response does not contain sensitive, personal or user-specific information. If it does, consider the use of the following HTTP response headers, to limit, or prevent the content being stored and retrieved from the cache by another user:</p><p>Cache-Control: no-cache, no-store, must-revalidate, private</p><p>Pragma: no-cache</p><p>Expires: 0</p><p>This configuration directs both HTTP 1.0 and HTTP 1.1 compliant caching servers to not store the response, and to not retrieve the response (without validation) from the cache, in response to a similar request.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc7234</p><p>https://datatracker.ietf.org/doc/html/rfc7231</p><p>https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html</p>",
+					"cweid": "524",
+					"wascid": "13",
+					"sourceid": "5"
+				},
+				{
+					"pluginid": "10031",
+					"alertRef": "10031",
+					"alert": "User Controllable HTML Element Attribute (Potential XSS)",
+					"name": "User Controllable HTML Element Attribute (Potential XSS)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informational (Low)",
+					"desc": "<p>This check looks at user-supplied input in query string parameters and POST data to identify where certain HTML attribute values might be controlled. This provides hot-spot detection for XSS (cross-site scripting) that will require further review by a security analyst to determine exploitability.</p>",
+					"instances":[ 
+						{
+							"id": "192",
+							"uri": "https://www.zaproxy.org/search/?q=ZAP",
+							"method": "GET",
+							"param": "q",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.zaproxy.org/search/?q=ZAP\n\nappears to include user input in:\na(n) [img] tag [alt] attribute\n\nThe user input found was:\nq=ZAP\n\nThe user-controlled value was:\nzap by checkmarx"
+						},
+						{
+							"id": "191",
+							"uri": "https://www.zaproxy.org/search/?q=ZAP",
+							"method": "GET",
+							"param": "q",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:\n\nhttps://www.zaproxy.org/search/?q=ZAP\n\nappears to include user input in:\na(n) [link] tag [title] attribute\n\nThe user input found was:\nq=ZAP\n\nThe user-controlled value was:\nzap"
+						}
+					],
+					"count": "2",
+					"solution": "<p>Validate all input and sanitize output it before writing to any HTML attributes.</p>",
+					"otherinfo": "<p>User-controlled HTML attribute values were found. Try injecting special characters to see if XSS might be possible. The page at the following URL:</p><p></p><p>https://www.zaproxy.org/search/?q=ZAP</p><p></p><p>appears to include user input in:</p><p>a(n) [img] tag [alt] attribute</p><p></p><p>The user input found was:</p><p>q=ZAP</p><p></p><p>The user-controlled value was:</p><p>zap by checkmarx</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "6436"
+				},
+				{
+					"pluginid": "10057",
+					"alertRef": "10057",
+					"alert": "Username Hash Found",
+					"name": "Username Hash Found",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informational (High)",
+					"desc": "<p>A hash of a username (admin) was found in the response. This may indicate that the application is subject to an Insecure Direct Object Reference (IDOR) vulnerability. Manual testing will be required to see if this discovery can be abused.</p>",
+					"instances":[ 
+						{
+							"id": "184",
+							"uri": "https://www.zaproxy.org/docs/alerts/10057/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "d033e22ae348aeb5660fc2140aec35850c4da997",
+							"otherinfo": "The hash was an SHA1, with value: d033e22ae348aeb5660fc2140aec35850c4da997"
+						},
+						{
+							"id": "165",
+							"uri": "https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-header/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918",
+							"otherinfo": "The hash was an SHA256, with value: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+						}
+					],
+					"count": "2",
+					"solution": "<p>Use per user or session indirect object references (create a temporary mapping at time of use). Or, ensure that each use of a direct object reference is tied to an authorization check to ensure the user is authorized for the requested object.</p>",
+					"otherinfo": "<p>The hash was an SHA1, with value: d033e22ae348aeb5660fc2140aec35850c4da997</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/05-Authorization_Testing/04-Testing_for_Insecure_Direct_Object_References.html</p>",
+					"cweid": "284",
+					"wascid": "2",
+					"sourceid": "4363"
+				}
+			]
+		}
+	],
+	"sequences":[
+	]
+
+}

@@ -1,0 +1,115 @@
+Vulnerability,URL
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:55:18
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:376:14
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/ftp
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/ftp/coupons_2013.md.bak
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/ftp/eastere.gg
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/ftp/encrypt.pyc
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/ftp/package.json.bak
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/ftp/suspicious_errors.yml
+Content Security Policy (CSP) Header Not Set,https://juice-shop.herokuapp.com/sitemap.xml
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/assets/public/favicon_js.ico
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/ftp/eastere.gg
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/ftp/incident-support.kdbx
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/ftp/order_5267-78b72e7bd6152b14.pdf
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/main.js
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/polyfills.js
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/runtime.js
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/sitemap.xml
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/styles.css
+Cross-Domain Misconfiguration,https://juice-shop.herokuapp.com/vendor.js
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:55:18
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:55:18
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:376:14
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:376:14
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/sitemap.xml
+Cross-Domain JavaScript Source File Inclusion,https://juice-shop.herokuapp.com/sitemap.xml
+Dangerous JS Functions,https://juice-shop.herokuapp.com/main.js
+Dangerous JS Functions,https://juice-shop.herokuapp.com/vendor.js
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/ftp/coupons_2013.md.bak
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/ftp/eastere.gg
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/ftp/encrypt.pyc
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/ftp/package.json.bak
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/ftp/suspicious_errors.yml
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/main.js
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/polyfills.js
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/runtime.js
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/sitemap.xml
+Deprecated Feature Policy Header Set,https://juice-shop.herokuapp.com/vendor.js
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/ftp
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/sitemap.xml
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/ftp
+Insufficient Site Isolation Against Spectre Vulnerability,https://juice-shop.herokuapp.com/sitemap.xml
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/assets/public/favicon_js.ico
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/ftp/incident-support.kdbx
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/ftp/order_5267-78b72e7bd6152b14.pdf
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/main.js
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/polyfills.js
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/robots.txt
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/runtime.js
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/sitemap.xml
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/styles.css
+Strict-Transport-Security Header Not Set,https://juice-shop.herokuapp.com/vendor.js
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/assets/public/favicon_js.ico
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/main.js
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/main.js
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/polyfills.js
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/robots.txt
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/runtime.js
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/sitemap.xml
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/styles.css
+Timestamp Disclosure - Unix,https://juice-shop.herokuapp.com/vendor.js
+Information Disclosure - Suspicious Comments,https://juice-shop.herokuapp.com/main.js
+Information Disclosure - Suspicious Comments,https://juice-shop.herokuapp.com/vendor.js
+Modern Web Application,https://juice-shop.herokuapp.com/
+Modern Web Application,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:39:13
+Modern Web Application,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:55:18
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/assets/public/favicon_js.ico
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:376:14
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:421:3
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/styles.css
+Modern Web Application,https://juice-shop.herokuapp.com/app/node_modules/serve-index/index.js:145:39
+Modern Web Application,https://juice-shop.herokuapp.com/sitemap.xml
+Non-Storable Content,https://juice-shop.herokuapp.com/ftp/eastere.gg
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:39:13
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/app/build/routes/fileServer.js:55:18
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:286:9
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/index.js:376:14
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/app/node_modules/express/lib/router/layer.js:95:5
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/ftp
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/ftp/acquisitions.md
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/ftp/legal.md
+Re-examine Cache-control Directives,https://juice-shop.herokuapp.com/sitemap.xml
+Storable and Cacheable Content,https://juice-shop.herokuapp.com/robots.txt
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/assets/public/favicon_js.ico
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/ftp/incident-support.kdbx
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/ftp/order_5267-78b72e7bd6152b14.pdf
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/main.js
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/polyfills.js
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/runtime.js
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/sitemap.xml
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/styles.css
+Storable but Non-Cacheable Content,https://juice-shop.herokuapp.com/vendor.js

@@ -1,0 +1,2 @@
+Program,Version,Generated,Site,Host,Port,SSL,High,Medium,Low,Info
+ZAP,2.16.0,"Thu, 13 Mar 2025 22:42:02",https://juice-shop.herokuapp.com,juice-shop.herokuapp.com,443,true,0,23,60,37

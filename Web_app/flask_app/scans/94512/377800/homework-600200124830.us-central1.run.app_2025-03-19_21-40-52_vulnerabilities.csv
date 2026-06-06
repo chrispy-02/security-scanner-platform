@@ -1,0 +1,91 @@
+Vulnerability,URL
+Absence of Anti-CSRF Tokens,https://homework-600200124830.us-central1.run.app/
+Absence of Anti-CSRF Tokens,https://homework-600200124830.us-central1.run.app/home
+Absence of Anti-CSRF Tokens,https://homework-600200124830.us-central1.run.app/piano
+Absence of Anti-CSRF Tokens,https://homework-600200124830.us-central1.run.app/projects
+Absence of Anti-CSRF Tokens,https://homework-600200124830.us-central1.run.app/resume
+Absence of Anti-CSRF Tokens,https://homework-600200124830.us-central1.run.app/processfeedback
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/home
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/piano
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/piano.html
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/processfeedback
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/projects
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/resume
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/robots.txt
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/sitemap.xml
+Content Security Policy (CSP) Header Not Set,https://homework-600200124830.us-central1.run.app/processfeedback
+Missing Anti-clickjacking Header,https://homework-600200124830.us-central1.run.app/piano
+Missing Anti-clickjacking Header,https://homework-600200124830.us-central1.run.app/projects
+Missing Anti-clickjacking Header,https://homework-600200124830.us-central1.run.app/resume
+Missing Anti-clickjacking Header,https://homework-600200124830.us-central1.run.app/processfeedback
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/home
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/projects
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/static/main/css/header.css
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/home
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/projects
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/home
+Insufficient Site Isolation Against Spectre Vulnerability,https://homework-600200124830.us-central1.run.app/projects
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/home
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/piano.html
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/processfeedback
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/projects
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/robots.txt
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/sitemap.xml
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/js/main.js
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/js/navbar.js
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/static/piano/js/piano.js
+Permissions Policy Header Not Set,https://homework-600200124830.us-central1.run.app/processfeedback
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/home
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/piano.html
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/projects
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/robots.txt
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/sitemap.xml
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/css/footer.css
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/css/header.css
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/css/main.css
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/css/navbar.css
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/js/main.js
+Strict-Transport-Security Header Not Set,https://homework-600200124830.us-central1.run.app/static/main/js/navbar.js
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/home
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/projects
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/feedback.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/footer.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/header.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/main.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/navbar.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/projects.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/css/resume.css
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/images/social-linkedin.png
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/js/main.js
+X-Content-Type-Options Header Missing,https://homework-600200124830.us-central1.run.app/static/main/js/navbar.js
+Information Disclosure - Suspicious Comments,https://homework-600200124830.us-central1.run.app/static/piano/js/piano.js
+Modern Web Application,https://homework-600200124830.us-central1.run.app/
+Modern Web Application,https://homework-600200124830.us-central1.run.app/home
+Modern Web Application,https://homework-600200124830.us-central1.run.app/piano
+Modern Web Application,https://homework-600200124830.us-central1.run.app/projects
+Modern Web Application,https://homework-600200124830.us-central1.run.app/resume
+Modern Web Application,https://homework-600200124830.us-central1.run.app/processfeedback
+Non-Storable Content,https://homework-600200124830.us-central1.run.app/
+Re-examine Cache-control Directives,https://homework-600200124830.us-central1.run.app/
+Re-examine Cache-control Directives,https://homework-600200124830.us-central1.run.app/home
+Re-examine Cache-control Directives,https://homework-600200124830.us-central1.run.app/piano
+Re-examine Cache-control Directives,https://homework-600200124830.us-central1.run.app/projects
+Re-examine Cache-control Directives,https://homework-600200124830.us-central1.run.app/resume
+Storable and Cacheable Content,https://homework-600200124830.us-central1.run.app/
+Storable and Cacheable Content,https://homework-600200124830.us-central1.run.app/home
+Storable and Cacheable Content,https://homework-600200124830.us-central1.run.app/piano.html
+Storable and Cacheable Content,https://homework-600200124830.us-central1.run.app/projects
+Storable and Cacheable Content,https://homework-600200124830.us-central1.run.app/robots.txt
+Storable and Cacheable Content,https://homework-600200124830.us-central1.run.app/sitemap.xml
+Storable but Non-Cacheable Content,https://homework-600200124830.us-central1.run.app/static/main/css/footer.css
+Storable but Non-Cacheable Content,https://homework-600200124830.us-central1.run.app/static/main/css/header.css
+Storable but Non-Cacheable Content,https://homework-600200124830.us-central1.run.app/static/main/css/main.css
+Storable but Non-Cacheable Content,https://homework-600200124830.us-central1.run.app/static/main/css/navbar.css
+Storable but Non-Cacheable Content,https://homework-600200124830.us-central1.run.app/static/main/js/navbar.js

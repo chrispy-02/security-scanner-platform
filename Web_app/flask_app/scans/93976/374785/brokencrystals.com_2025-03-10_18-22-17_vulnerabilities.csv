@@ -1,0 +1,111 @@
+Vulnerability,URL
+Content Security Policy (CSP) Header Not Set,https://brokencrystals.com/
+Content Security Policy (CSP) Header Not Set,https://brokencrystals.com/sitemap.xml
+Sub Resource Integrity Attribute Missing,https://brokencrystals.com/
+Sub Resource Integrity Attribute Missing,https://brokencrystals.com/sitemap.xml
+Vulnerable JS Library,https://brokencrystals.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+Vulnerable JS Library,https://brokencrystals.com/assets/vendor/jquery/jquery.min.js
+Cookie No HttpOnly Flag,https://brokencrystals.com/
+Cookie No HttpOnly Flag,https://brokencrystals.com/api/config
+Cookie No HttpOnly Flag,https://brokencrystals.com/api/config
+Cookie No HttpOnly Flag,https://brokencrystals.com/assets/index-Bm2fv7OY.css
+Cookie No HttpOnly Flag,https://brokencrystals.com/favicons/favicon-16x16.png
+Cookie No HttpOnly Flag,https://brokencrystals.com/favicons/favicon-32x32.png
+Cookie No HttpOnly Flag,https://brokencrystals.com/manifest.json
+Cookie No HttpOnly Flag,https://brokencrystals.com/robots.txt
+Cookie No HttpOnly Flag,https://brokencrystals.com/vendor/slick/slick.css
+Cookie No HttpOnly Flag,https://brokencrystals.com/vendor/wow/animate.css
+Cookie Without Secure Flag,https://brokencrystals.com/
+Cookie Without Secure Flag,https://brokencrystals.com/api/config
+Cookie Without Secure Flag,https://brokencrystals.com/api/config
+Cookie Without Secure Flag,https://brokencrystals.com/assets/css/style.css
+Cookie Without Secure Flag,https://brokencrystals.com/assets/index-Bm2fv7OY.css
+Cookie Without Secure Flag,https://brokencrystals.com/assets/vendor/venobox/venobox.css
+Cookie Without Secure Flag,https://brokencrystals.com/css/theme.css
+Cookie Without Secure Flag,https://brokencrystals.com/favicons/apple-icon-180x180.png
+Cookie Without Secure Flag,https://brokencrystals.com/favicons/favicon-16x16.png
+Cookie Without Secure Flag,https://brokencrystals.com/favicons/favicon-32x32.png
+Cookie Without Secure Flag,https://brokencrystals.com/manifest.json
+Cookie Without Secure Flag,https://brokencrystals.com/robots.txt
+Cookie Without Secure Flag,https://brokencrystals.com/vendor/slick/slick.css
+Cookie Without Secure Flag,https://brokencrystals.com/vendor/wow/animate.css
+Cookie without SameSite Attribute,https://brokencrystals.com/
+Cookie without SameSite Attribute,https://brokencrystals.com/api/config
+Cookie without SameSite Attribute,https://brokencrystals.com/api/config
+Cookie without SameSite Attribute,https://brokencrystals.com/assets/index-Bm2fv7OY.css
+Cookie without SameSite Attribute,https://brokencrystals.com/assets/vendor/venobox/venobox.css
+Cookie without SameSite Attribute,https://brokencrystals.com/css/theme.css
+Cookie without SameSite Attribute,https://brokencrystals.com/favicons/apple-icon-180x180.png
+Cookie without SameSite Attribute,https://brokencrystals.com/favicons/favicon-32x32.png
+Cookie without SameSite Attribute,https://brokencrystals.com/manifest.json
+Cookie without SameSite Attribute,https://brokencrystals.com/robots.txt
+Cookie without SameSite Attribute,https://brokencrystals.com/vendor/slick/slick.css
+Cookie without SameSite Attribute,https://brokencrystals.com/vendor/wow/animate.css
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/css/theme.css
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/favicons/apple-icon-180x180.png
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/manifest.json
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/robots.txt
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/sitemap.xml
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/vendor/slick/slick.css
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/sitemap.xml
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/
+Insufficient Site Isolation Against Spectre Vulnerability,https://brokencrystals.com/sitemap.xml
+Permissions Policy Header Not Set,https://brokencrystals.com/
+Permissions Policy Header Not Set,https://brokencrystals.com/assets/vendor/aos/aos.js
+Permissions Policy Header Not Set,https://brokencrystals.com/assets/vendor/bootstrap/js/bootstrap.bundle.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/assets/vendor/counterup/counterup.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/assets/vendor/jquery.easing/jquery.easing.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/assets/vendor/jquery/jquery.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/assets/vendor/venobox/venobox.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/sitemap.xml
+Permissions Policy Header Not Set,https://brokencrystals.com/vendor/counter-up/jquery.counterup.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/vendor/counter-up/jquery.waypoints.min.js
+Permissions Policy Header Not Set,https://brokencrystals.com/vendor/wow/wow.min.js
+X-Content-Type-Options Header Missing,https://brokencrystals.com/
+X-Content-Type-Options Header Missing,https://brokencrystals.com/api/config
+X-Content-Type-Options Header Missing,https://brokencrystals.com/assets/index-Bm2fv7OY.css
+X-Content-Type-Options Header Missing,https://brokencrystals.com/assets/vendor/jquery.easing/jquery.easing.min.js
+X-Content-Type-Options Header Missing,https://brokencrystals.com/assets/vendor/venobox/venobox.css
+X-Content-Type-Options Header Missing,https://brokencrystals.com/css/theme.css
+X-Content-Type-Options Header Missing,https://brokencrystals.com/favicons/apple-icon-180x180.png
+X-Content-Type-Options Header Missing,https://brokencrystals.com/favicons/favicon-32x32.png
+X-Content-Type-Options Header Missing,https://brokencrystals.com/manifest.json
+X-Content-Type-Options Header Missing,https://brokencrystals.com/robots.txt
+X-Content-Type-Options Header Missing,https://brokencrystals.com/sitemap.xml
+X-Content-Type-Options Header Missing,https://brokencrystals.com/vendor/slick/slick.css
+Information Disclosure - Suspicious Comments,https://brokencrystals.com/assets/index-s0ztIcTn.js
+Information Disclosure - Suspicious Comments,https://brokencrystals.com/assets/vendor/jquery/jquery.min.js
+Information Disclosure - Suspicious Comments,https://brokencrystals.com/
+Information Disclosure - Suspicious Comments,https://brokencrystals.com/sitemap.xml
+Modern Web Application,https://brokencrystals.com/
+Modern Web Application,https://brokencrystals.com/sitemap.xml
+Re-examine Cache-control Directives,https://brokencrystals.com/
+Re-examine Cache-control Directives,https://brokencrystals.com/api/config
+Re-examine Cache-control Directives,https://brokencrystals.com/manifest.json
+Re-examine Cache-control Directives,https://brokencrystals.com/sitemap.xml
+Session Management Response Identified,https://brokencrystals.com/
+Session Management Response Identified,https://brokencrystals.com/
+Session Management Response Identified,https://brokencrystals.com/api/config
+Session Management Response Identified,https://brokencrystals.com/assets/index-Bm2fv7OY.css
+Session Management Response Identified,https://brokencrystals.com/assets/vendor/jquery.easing/jquery.easing.min.js
+Session Management Response Identified,https://brokencrystals.com/assets/vendor/venobox/venobox.css
+Session Management Response Identified,https://brokencrystals.com/css/theme.css
+Session Management Response Identified,https://brokencrystals.com/favicons/apple-icon-180x180.png
+Session Management Response Identified,https://brokencrystals.com/favicons/favicon-32x32.png
+Session Management Response Identified,https://brokencrystals.com/manifest.json
+Session Management Response Identified,https://brokencrystals.com/robots.txt
+Session Management Response Identified,https://brokencrystals.com/vendor/slick/slick.css
+Storable and Cacheable Content,https://brokencrystals.com/api/config
+Storable and Cacheable Content,https://brokencrystals.com/sitemap.xml
+Storable but Non-Cacheable Content,https://brokencrystals.com/
+Storable but Non-Cacheable Content,https://brokencrystals.com/assets/index-Bm2fv7OY.css
+Storable but Non-Cacheable Content,https://brokencrystals.com/assets/vendor/venobox/venobox.css
+Storable but Non-Cacheable Content,https://brokencrystals.com/css/theme.css
+Storable but Non-Cacheable Content,https://brokencrystals.com/favicons/apple-icon-180x180.png
+Storable but Non-Cacheable Content,https://brokencrystals.com/favicons/favicon-32x32.png
+Storable but Non-Cacheable Content,https://brokencrystals.com/manifest.json
+Storable but Non-Cacheable Content,https://brokencrystals.com/robots.txt
+Storable but Non-Cacheable Content,https://brokencrystals.com/vendor/slick/slick.css
+Storable but Non-Cacheable Content,https://brokencrystals.com/vendor/wow/animate.css

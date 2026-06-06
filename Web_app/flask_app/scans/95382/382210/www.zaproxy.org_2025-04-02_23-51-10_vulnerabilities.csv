@@ -1,0 +1,179 @@
+Vulnerability,URL
+PII Disclosure,https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/
+PII Disclosure,https://www.zaproxy.org/addons/
+Application Error Disclosure,https://www.zaproxy.org/docs/alerts/30001/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/addons/database/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/addons/graphql-support/options/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/addons/passive-scan-rules/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/releases/2.7.0/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/start/features/custompages/
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/start/features/index.xml
+Application Error Disclosure,https://www.zaproxy.org/docs/desktop/ui/dialogs/session/contexts/
+Application Error Disclosure,https://www.zaproxy.org/index.xml
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/community/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/docs/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/docs/alerts/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/docs/automate/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/docs/statistics/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/getting-started/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/robots.txt
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/success/jit/
+Content Security Policy (CSP) Header Not Set,https://www.zaproxy.org/videos/
+Cross-Domain Misconfiguration,https://www.zaproxy.org/docs/automate/index.xml
+Cross-Domain Misconfiguration,https://www.zaproxy.org/docs/index.xml
+Cross-Domain Misconfiguration,https://www.zaproxy.org/getting-started/images/firefox-protection-hud.png
+Cross-Domain Misconfiguration,https://www.zaproxy.org/img/checkmarx.svg
+Cross-Domain Misconfiguration,https://www.zaproxy.org/img/favicon.ico
+Cross-Domain Misconfiguration,https://www.zaproxy.org/img/search.svg
+Cross-Domain Misconfiguration,https://www.zaproxy.org/img/zap-by-checkmarx.svg
+Cross-Domain Misconfiguration,https://www.zaproxy.org/index.xml
+Cross-Domain Misconfiguration,https://www.zaproxy.org/main.98e1bf.css
+Cross-Domain Misconfiguration,https://www.zaproxy.org/main.aa09f7.js
+Cross-Domain Misconfiguration,https://www.zaproxy.org/pdf/ZAPGettingStartedGuide-2.16.pdf
+Cross-Domain Misconfiguration,https://www.zaproxy.org/sitemap.xml
+Source Code Disclosure - SQL,https://www.zaproxy.org/blog/2022-12-24-12-days-of-zapmas/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/api/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/addons/ajax-spider/scandialog/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/addons/parameter-digger/dialog/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/addons/quick-start/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/addons/report-generation/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/addons/retest/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/releases/1.3.1/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/releases/index.xml
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/start/features/authentication/
+Source Code Disclosure - SQL,https://www.zaproxy.org/docs/desktop/ui/dialogs/options/language/
+Source Code Disclosure - SQL,https://www.zaproxy.org/index.xml
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/robots.txt
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/robots.txt
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/robots.txt
+Sub Resource Integrity Attribute Missing,https://www.zaproxy.org/robots.txt
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/docs/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/docs/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/docs/alerts/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/docs/alerts/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/robots.txt
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/robots.txt
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/videos/
+Cross-Domain JavaScript Source File Inclusion,https://www.zaproxy.org/videos/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/alerts/30001/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/alerts/40008/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/desktop/addons/passive-scan-rules/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/desktop/start/features/custompages/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/desktop/start/features/index.xml
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/docs/desktop/ui/dialogs/session/contexts/
+Information Disclosure - Debug Error Messages,https://www.zaproxy.org/index.xml
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/docs/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/videos/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/docs/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/videos/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/docs/
+Insufficient Site Isolation Against Spectre Vulnerability,https://www.zaproxy.org/videos/
+Permissions Policy Header Not Set,https://www.zaproxy.org/
+Permissions Policy Header Not Set,https://www.zaproxy.org/community/
+Permissions Policy Header Not Set,https://www.zaproxy.org/docs/
+Permissions Policy Header Not Set,https://www.zaproxy.org/docs/automate/
+Permissions Policy Header Not Set,https://www.zaproxy.org/docs/statistics/
+Permissions Policy Header Not Set,https://www.zaproxy.org/download/
+Permissions Policy Header Not Set,https://www.zaproxy.org/getting-started/
+Permissions Policy Header Not Set,https://www.zaproxy.org/main.aa09f7.js
+Permissions Policy Header Not Set,https://www.zaproxy.org/robots.txt
+Permissions Policy Header Not Set,https://www.zaproxy.org/success/jit/
+Permissions Policy Header Not Set,https://www.zaproxy.org/videos/
+Private IP Disclosure,https://www.zaproxy.org/blog/2022-08-25-zap-on-raspberry-pi/
+Private IP Disclosure,https://www.zaproxy.org/docs/alerts/10107/
+Private IP Disclosure,https://www.zaproxy.org/docs/alerts/110006/
+Private IP Disclosure,https://www.zaproxy.org/docs/alerts/2/
+Private IP Disclosure,https://www.zaproxy.org/docs/alerts/index.xml
+Private IP Disclosure,https://www.zaproxy.org/docs/desktop/addons/network/options/localservers/
+Private IP Disclosure,https://www.zaproxy.org/docs/desktop/addons/network/options/servercertificates/
+Private IP Disclosure,https://www.zaproxy.org/docs/desktop/addons/passive-scan-rules/
+Private IP Disclosure,https://www.zaproxy.org/docs/desktop/addons/websockets/pscanrules/
+Private IP Disclosure,https://www.zaproxy.org/docs/docker/about/
+Private IP Disclosure,https://www.zaproxy.org/index.xml
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/docs/automate/index.xml
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/docs/index.xml
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/getting-started/images/firefox-protection-hud.png
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/img/checkmarx.svg
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/img/favicon.ico
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/img/search.svg
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/img/zap-by-checkmarx.svg
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/index.xml
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/main.98e1bf.css
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/main.aa09f7.js
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/pdf/ZAPGettingStartedGuide-2.16.pdf
+Strict-Transport-Security Header Not Set,https://www.zaproxy.org/sitemap.xml
+Timestamp Disclosure - Unix,https://www.zaproxy.org/docs/alerts/10096/
+Timestamp Disclosure - Unix,https://www.zaproxy.org/docs/alerts/120002-1/
+Timestamp Disclosure - Unix,https://www.zaproxy.org/docs/alerts/120002-2/
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/docs/automate/index.xml
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/docs/index.xml
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/getting-started/images/firefox-protection-hud.png
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/img/checkmarx.svg
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/img/favicon.ico
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/img/search.svg
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/img/zap-by-checkmarx.svg
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/index.xml
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/main.98e1bf.css
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/main.aa09f7.js
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/pdf/ZAPGettingStartedGuide-2.16.pdf
+X-Content-Type-Options Header Missing,https://www.zaproxy.org/sitemap.xml
+Information Disclosure - Suspicious Comments,https://www.zaproxy.org/main.aa09f7.js
+Modern Web Application,https://www.zaproxy.org/
+Modern Web Application,https://www.zaproxy.org/community/
+Modern Web Application,https://www.zaproxy.org/docs/
+Modern Web Application,https://www.zaproxy.org/docs/alerts/
+Modern Web Application,https://www.zaproxy.org/docs/automate/
+Modern Web Application,https://www.zaproxy.org/docs/statistics/
+Modern Web Application,https://www.zaproxy.org/getting-started/
+Modern Web Application,https://www.zaproxy.org/robots.txt
+Modern Web Application,https://www.zaproxy.org/success/jit/
+Modern Web Application,https://www.zaproxy.org/videos/
+Re-examine Cache-control Directives,https://www.zaproxy.org/
+Re-examine Cache-control Directives,https://www.zaproxy.org/community/
+Re-examine Cache-control Directives,https://www.zaproxy.org/docs/
+Re-examine Cache-control Directives,https://www.zaproxy.org/docs/alerts/
+Re-examine Cache-control Directives,https://www.zaproxy.org/docs/automate/
+Re-examine Cache-control Directives,https://www.zaproxy.org/docs/statistics/
+Re-examine Cache-control Directives,https://www.zaproxy.org/download/
+Re-examine Cache-control Directives,https://www.zaproxy.org/getting-started/
+Re-examine Cache-control Directives,https://www.zaproxy.org/sitemap.xml
+Re-examine Cache-control Directives,https://www.zaproxy.org/success/jit/
+Re-examine Cache-control Directives,https://www.zaproxy.org/videos/
+Retrieved from Cache,https://www.zaproxy.org/
+Retrieved from Cache,https://www.zaproxy.org/docs/
+Retrieved from Cache,https://www.zaproxy.org/docs/automate/
+Retrieved from Cache,https://www.zaproxy.org/getting-started/
+Retrieved from Cache,https://www.zaproxy.org/robots.txt
+Retrieved from Cache,https://www.zaproxy.org/sitemap.xml
+Retrieved from Cache,https://www.zaproxy.org/docs
+Retrieved from Cache,https://www.zaproxy.org/docs/alerts
+Retrieved from Cache,https://www.zaproxy.org/main.98e1bf.css
+Retrieved from Cache,https://www.zaproxy.org/main.aa09f7.js
+Retrieved from Cache,https://www.zaproxy.org/videos/
+Storable and Cacheable Content,https://www.zaproxy.org/
+Storable and Cacheable Content,https://www.zaproxy.org/docs
+Storable and Cacheable Content,https://www.zaproxy.org/docs/
+Storable and Cacheable Content,https://www.zaproxy.org/docs/alerts
+Storable and Cacheable Content,https://www.zaproxy.org/docs/automate/
+Storable and Cacheable Content,https://www.zaproxy.org/img/favicon.ico
+Storable and Cacheable Content,https://www.zaproxy.org/main.98e1bf.css
+Storable and Cacheable Content,https://www.zaproxy.org/main.aa09f7.js
+Storable and Cacheable Content,https://www.zaproxy.org/robots.txt
+Storable and Cacheable Content,https://www.zaproxy.org/sitemap.xml
+Storable and Cacheable Content,https://www.zaproxy.org/videos/
+User Controllable HTML Element Attribute (Potential XSS),https://www.zaproxy.org/search/?q=ZAP
+User Controllable HTML Element Attribute (Potential XSS),https://www.zaproxy.org/search/?q=ZAP
+Username Hash Found,https://www.zaproxy.org/docs/alerts/10057/
+Username Hash Found,https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-header/
