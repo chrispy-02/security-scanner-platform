@@ -58,4 +58,4 @@ The scan backend validates every target before dispatching a scan:
 ## Responsible disclosure
 
 Found an issue? Please open a private report to the repository maintainer
-_(add your preferred contact here)_ rather than filing a public issue with exploit details.
+nguye805@msu.edu rather than filing a public issue with exploit details.
