@@ -24,6 +24,7 @@ USER appuser
 
 EXPOSE 8080
 
-# Production server. A single worker keeps the in-process scan scheduler from being
-# duplicated and keeps the session key consistent across requests.
-CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT} --workers 1 --threads 8 --timeout 120 app:app"]
+# Entrypoint seeds the schema/demo data (idempotent) then starts gunicorn.
+# A single worker keeps the in-process scan scheduler from being duplicated and
+# keeps the session key consistent across requests.
+CMD ["sh", "./start.sh"]

@@ -37,10 +37,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    # Seed demo schema + data (idempotent), then start the production server.
-    command: >
-      sh -c "python seed_demo.py || true &&
-             gunicorn --bind 0.0.0.0:${PORT:-8080} --workers 1 --threads 8 --timeout 120 app:app"
+    # Startup (seed + gunicorn) is handled by the image entrypoint (Web_app/start.sh).
 
 volumes:
   db_data:
