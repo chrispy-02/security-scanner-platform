@@ -3,7 +3,7 @@
 A web application security platform that automates **OWASP ZAP** scans, parses the
 results, and presents vulnerabilities through an interactive, role-based dashboard.
 
-> **Live demo:** _add your deployed URL here_ &nbsp;•&nbsp; **Walkthrough video:** https://www.youtube.com/watch?v=YUtp3JlNoGM
+> **Project video:** https://www.youtube.com/watch?v=YUtp3JlNoGM
 
 ---
 
