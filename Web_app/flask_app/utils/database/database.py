@@ -20,6 +20,28 @@ class database:
         self.port = int(os.getenv("MYSQL_PORT", 33306))
         self.password = os.getenv("MYSQL_PASSWORD")
 
+        # Shared connection settings: bounded connect time (so an unreachable DB fails
+        # fast instead of hanging a worker) plus optional TLS CA for managed MySQL (Aiven).
+        self._conn_kwargs = {
+            "host": self.host,
+            "user": self.user,
+            "password": self.password,
+            "port": self.port,
+            "database": self.database,
+            "charset": "utf8mb4",
+            "connection_timeout": int(os.getenv("MYSQL_CONNECT_TIMEOUT", "10")),
+        }
+        ssl_ca = os.getenv("MYSQL_SSL_CA")
+        ssl_ca_content = os.getenv("MYSQL_SSL_CA_CONTENT")
+        if ssl_ca_content and not ssl_ca:
+            import tempfile
+            fd, ssl_ca = tempfile.mkstemp(suffix=".pem")
+            with os.fdopen(fd, "w") as _f:
+                _f.write(ssl_ca_content)
+        if ssl_ca:
+            self._conn_kwargs["ssl_ca"] = ssl_ca
+            self._conn_kwargs["ssl_verify_cert"] = os.getenv("MYSQL_SSL_VERIFY", "true").lower() == "true"
+
         # Crypto material is read from the environment. The previously hard-coded
         # values were committed publicly and are considered compromised (see SECURITY.md).
         salt = os.getenv("PASSWORD_SALT", "vulnscan-dev-default-salt-change-me").encode("utf-8")
@@ -42,13 +64,7 @@ class database:
         print("Connecting to MySQL at:", self.host, ":", self.port)
 
         try:
-            cnx = mysql.connector.connect(host=self.host,
-                                          user=self.user,
-                                          password=self.password,
-                                          port=self.port,
-                                          database=self.database,
-                                          charset='utf8mb4'
-                                          )
+            cnx = mysql.connector.connect(**self._conn_kwargs)
             cursor = cnx.cursor()
             cursor.execute("SELECT VERSION()")
             version = cursor.fetchone()
@@ -59,13 +75,7 @@ class database:
     # Queries the db with a given query and returns the result
     def query(self, query="SELECT * FROM users", parameters=None):
 
-        cnx = mysql.connector.connect(host=self.host,
-                                      user=self.user,
-                                      password=self.password,
-                                      port=self.port,
-                                      database=self.database,
-                                      charset='utf8mb4'
-                                      )
+        cnx = mysql.connector.connect(**self._conn_kwargs)
 
         if parameters is not None:
             cur = cnx.cursor(dictionary=True)

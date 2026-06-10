@@ -62,14 +62,8 @@ db = database()  # reused only for env-consistent password/api-key hashing
 
 
 def conn():
-    return mysql.connector.connect(
-        host=os.getenv("MYSQL_HOST", "127.0.0.1"),
-        user=os.getenv("MYSQL_USER"),
-        password=os.getenv("MYSQL_PASSWORD"),
-        port=int(os.getenv("MYSQL_PORT", 3306)),
-        database=os.getenv("MYSQL_DATABASE"),
-        charset="utf8mb4",
-    )
+    # Reuse the database class's connection settings (bounded timeout + optional TLS CA).
+    return mysql.connector.connect(**db._conn_kwargs)
 
 
 def apply_schema(c):
